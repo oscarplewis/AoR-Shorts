@@ -1,0 +1,3733 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style>
+#body{
+    background-color:black;
+    overflow:auto;
+    size:absolute;
+    height:100vh;
+}
+.heading{
+    position:fixed;
+    size:absolute;
+    background-color:rgb(122 122 122);
+    width:100vw;
+    height:13vh;
+    top:0%;
+    left:0%;
+    border-bottom:2px solid navy;
+    z-index:10;
+}
+.heading img{
+    position:fixed;
+    top:2vh;
+    left:3vw;
+    size:absolute;
+    height:10vh;
+}
+/* Classes buttons */
+.classes{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+.classes .Assault{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:50px;
+    width:100px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+}
+    .classes .Assault:hover{
+        border:1px solid blue;
+    }
+.classes .Medic{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:50px;
+    width:100px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+}
+    .classes .Medic:hover{
+        border:1px solid blue;
+    }
+.classes .Support{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:50px;
+    width:100px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+}
+    .classes .Support:hover{
+        border:1px solid blue;
+    }
+.classes .Specialist{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:50px;
+    width:100px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+}
+    .classes .Specialist:hover{
+        border:1px solid blue;
+    }
+/* Assault customization */
+.assault-customization{
+    display:none;
+}
+.assaultprimaries{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .A280{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .A280:hover{
+            border:1px solid blue;
+        }
+    .DDC-MR6{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .DDC-MR6:hover{
+            border:1px solid blue;
+       }
+    .SKZ{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .SKZ:hover{
+            border:1px solid blue;
+        }
+    .OK-98{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .OK-98:hover{
+            border:1px solid blue;
+        }
+.selected-primary{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+#A280stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DDC-MR6stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#SKZstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#OK-98stats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.assaultgrenades{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .fraggrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .fraggrenade:hover{
+            border:1px solid blue;
+        }
+    .armorpiercinggrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .armorpiercinggrenade:hover{
+            border:1px solid blue;
+       }
+    .plasmagrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .plasmagrenade:hover{
+            border:1px solid blue;
+        }
+    .stungrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .stungrenade:hover{
+            border:1px solid blue;
+        }
+.selected-grenade{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+#fraggrenadestats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#armorpiercinggrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#plasmagrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stungrenadestats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.assaultgadget1{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .atlauncher{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .atlauncher:hover{
+            border:1px solid blue;
+        }
+    .commandomortar{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .commandomortar:hover{
+            border:1px solid blue;
+       }
+    .breachingcharge{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .breachingcharge:hover{
+            border:1px solid blue;
+        }
+    .atmine{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .atmine:hover{
+            border:1px solid blue;
+        }
+.selected-gadget1{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+#atlauncherstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#commandomortarstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#breachingchargestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#atminestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.assaultgadget2{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .fraglauncher{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+        }
+            .fraglauncher:hover{
+            border:1px solid blue;
+            }
+    .apmine{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .apmine:hover{
+            border:1px solid blue;
+       }
+    .magcharge{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .magcharge:hover{
+            border:1px solid blue;
+        }
+    .miniflame{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .miniflame:hover{
+            border:1px solid blue;
+        }
+.selected-gadget2{
+	display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+#fraglauncherstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#apminestats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#magchargestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#miniflamestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.assaultroles {
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .role-scout{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-scout:hover{
+                border:1px solid blue;
+            }
+    .role-gunner{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-gunner:hover{
+                border:1px solid blue;
+            }
+.selected-role{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+/* Medic customization */
+.medic-customization{
+    display:none;
+}
+.medicprimaries{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .EE-3{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .EE-3:hover{
+            border:1px solid blue;
+        }
+    .ACP{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .ACP:hover{
+            border:1px solid blue;
+       }
+    .Bola{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .Bola:hover{
+            border:1px solid blue;
+        }
+#EE-3stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#ACPstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#Bolastats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#OK-98stats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.medicgrenades{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .smokegrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .smokegrenade:hover{
+            border:1px solid blue;
+       }
+    .knockoutgrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .knockoutgrenade:hover{
+            border:1px solid blue;
+        }
+#fraggrenadestats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#knockoutgrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#smokegrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stungrenadestats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.medicgadget1{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .emergencymedpac-medisensor{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .emergencymedpac-medisensor:hover{
+            border:1px solid blue;
+        }
+    .stimpacks{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .stimpacks:hover{
+            border:1px solid blue;
+       }
+    .medpac-medisensor{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .medpac-medisensor:hover{
+            border:1px solid blue;
+        }
+#emergencymedpac-medisensor-stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stimpacksstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#medpac-medisensor-stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.medicgadget2{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .smokegrenadelauncher{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+        }
+            .smokegrenadelauncher:hover{
+            border:1px solid blue;
+            }
+    .knockoutmine{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .knockoutmine:hover{
+            border:1px solid blue;
+        }
+    .poisongrenades{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .poisongrenades:hover{
+            border:1px solid blue;
+        }
+#smokegrenadelauncherstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#knockoutminestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#poisongrenadesstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#apminestats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.medicroles {
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .role-combatmedic{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-combatmedic:hover{
+                border:1px solid blue;
+            }
+    .role-fieldsurgeon{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-fieldsurgeon:hover{
+                border:1px solid blue;
+            }
+/* Support customization */
+.support-customization{
+    display:none;
+}
+.supportprimaries{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .DLT19{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .DLT19:hover{
+            border:1px solid blue;
+        }
+    .DHX{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .DHX:hover{
+            border:1px solid blue;
+       }
+    .lightrepeating{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .lightrepeating:hover{
+            border:1px solid blue;
+        }
+    .scattergun{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .scattergun:hover{
+            border:1px solid blue;
+        }
+#DLT19stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DHXstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#lightrepeatingstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#scattergunstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.supportgrenades{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .mercygrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .mercygrenade:hover{
+            border:1px solid blue;
+       }
+    .infernogrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .infernogrenade:hover{
+            border:1px solid blue;
+        }
+    .thermaldet{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+    }
+        .thermaldet:hover{
+            border:1px solid blue;
+        }
+#fraggrenadestats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#infernogrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#mercygrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#thermaldetstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.supportgadget2{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .entrenchingtool{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .entrenchingtool:hover{
+            border:1px solid blue;
+        }
+    .toolrepairkit{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .toolrepairkit:hover{
+            border:1px solid blue;
+       }
+    .demolitionsscanner{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .demolitionsscanner:hover{
+            border:1px solid blue;
+        }
+#entrenchingtoolstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#toolrepairkitstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#demolitionsscannerstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.supportgadget1{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .shapedexplosivecharge{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .shapedexplosivecharge:hover{
+            border:1px solid blue;
+        }
+        .malaxan{
+            size:absolute;
+            background-color:black;
+            color:white;
+            border:1px solid white;
+            height:60px;
+            width:180px;
+            font-size:16px;
+            font-family:'Trebuchet MS', sans-serif;
+            float:left;
+            cursor:pointer;
+            transition:0.2s;
+            }
+                .malaxan:hover{
+                    border:1px solid blue;
+                }
+#shapedexplosivechargestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#atlauncherstats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#atminestats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#malaxanstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.supportroles {
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .role-heavy{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-heavy:hover{
+                border:1px solid blue;
+            }
+    .role-mechanic{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-mechanic:hover{
+                border:1px solid blue;
+            }
+/* Specialist customization */
+.specialist-customization{
+    display:none;
+}
+.specialistprimaries{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .E11{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .E11:hover{
+            border:1px solid blue;
+        }
+    .HBT4{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .HBT4:hover{
+            border:1px solid blue;
+       }
+    .sandpanther{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .sandpanther:hover{
+            border:1px solid blue;
+        }
+    .czerka{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .czerka:hover{
+            border:1px solid blue;
+        }
+#E11stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#HBT4stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#sandpantherstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#czerkastats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.specialistgrenades{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .throwingknives{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .throwingknives:hover{
+            border:1px solid blue;
+       }
+    .noisegrenade{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+    }
+        .noisegrenade:hover{
+            border:1px solid blue;
+        }
+#fraggrenadestats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#throwingknivesstats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#noisegrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#plasmagrenadestats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.specialistgadget1{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .reconremote-electrobinocs{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .reconremote-electrobinocs:hover{
+            border:1px solid blue;
+        }
+    .camopaint-disguisekit{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .camopaint-disguisekit:hover{
+            border:1px solid blue;
+       }
+    .lockbreaker-slicergear{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .lockbreaker-slicergear:hover{
+            border:1px solid blue;
+        }
+    .ghilliesuit-camonetting{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+    }
+        .ghilliesuit-camonetting:hover{
+            border:1px solid blue;
+        }
+#reconremote-electrobinocs-stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#camopaint-disguisekit-stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#lockbreaker-slicergear-stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#ghilliesuit-camonetting-stats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.specialistgadget2{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .datapurgegrenade{
+    size:absolute;
+    background-color:black;
+    color:white;
+    border:1px solid white;
+    height:60px;
+    width:180px;
+    font-size:16px;
+    font-family:'Trebuchet MS', sans-serif;
+    float:left;
+    cursor:pointer;
+    transition:0.2s;
+    }
+        .datapurgegrenade:hover{
+            border:1px solid blue;
+        }
+#fraglauncherstats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#apminestats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#magchargestats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#datapurgegrenadestats{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.specialistroles {
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .role-recon{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-recon:hover{
+                border:1px solid blue;
+            }
+    .role-tbd{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .role-tbd:hover{
+                border:1px solid blue;
+            }
+/* Customization instructions */
+.classes-instructions{
+    color:white;
+    margin-top:20vh;
+    display:flex;
+    justify-content: center;
+    
+}
+.primaryweaponinstructions{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:white;
+}
+.secondaryweaponinstructions{
+    display:flex;
+    justify-content: center;
+    margin-top:10vh;
+    color:white;
+}
+.grenadeinstructions{
+    display:flex;
+    justify-content: center;
+    margin-top:10vh;
+    color:white;
+}
+.meleeinstructions{
+    display:flex;
+    justify-content: center;
+    margin-top:10vh;
+    color:white;
+}
+.gadget1instructions{
+    display:flex;
+    justify-content:center;
+    margin-top:10vh;
+    color:white;
+}
+.gadget2instructions{
+    display:flex;
+    justify-content:center;
+    margin-top:10vh;
+    color:white;
+}
+.roleinstructions{
+    display:flex;
+    justify-content:center;
+    margin-top:10vh;
+    color:white;
+}
+/* Universal customization */
+.selected-class{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+.secondaries{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .HL-27{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:220px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .HL-27:hover{
+                border:1px solid blue;
+            }
+    .SE-14r{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:220px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .SE-14r:hover{
+                border:1px solid blue;
+            }
+    .DH-17{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:220px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .DH-17:hover{
+                border:1px solid blue;
+            }
+    .DL-44{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:220px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .DL-44:hover{
+                border:1px solid blue;
+            }
+.selected-secondary{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+#HL-27stats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#HL-27stats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#HL-27stats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#HL-27stats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#SE-14rstats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#SE-14rstats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#SE-14rstats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#SE-14rstats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DH-17stats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DH-17stats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DH-17stats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DH-17stats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DL-44stats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DL-44stats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DL-44stats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#DL-44stats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.melees{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+}
+    .blastknuckles{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .blastknuckles:hover{
+                border:1px solid blue;
+            }
+    .stunbaton{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .stunbaton:hover{
+                border:1px solid blue;
+            }
+    .vibroblade{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .vibroblade:hover{
+                border:1px solid blue;
+            }
+    .punchdagger{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:180px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        float:left;
+        cursor:pointer;
+        transition:0.2s;
+        }
+            .punchdagger:hover{
+                border:1px solid blue;
+            }
+.selected-melee{
+    display:flex;
+    justify-content: center;
+    margin-top:5vh;
+    color:red;
+}
+#blastknucklesstats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#blastknucklesstats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#blastknucklesstats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#blastknucklesstats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stunbatonstats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stunbatonstats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stunbatonstats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#stunbatonstats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#vibrobladestats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#vibrobladestats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#vibrobladestats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#vibrobladestats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#punchdaggerstats-assault{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#punchdaggerstats-medic{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#punchdaggerstats-support{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+#punchdaggerstats-specialist{
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.generation{
+	display:flex;
+	justify-content:center;
+	margin-top:15vh;
+	margin-bottom:20vh;
+}
+    .generate-character-sheet{
+        size:absolute;
+        background-color:black;
+        color:white;
+        border:1px solid white;
+        height:60px;
+        width:220px;
+        font-size:16px;
+        font-family:'Trebuchet MS', sans-serif;
+        cursor:pointer;
+        transition:0.2s;
+	}
+            .generate-character-sheet:hover{
+				background-color:white;
+				color:black;
+				}
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+
+/* Classes */
+$(".Assault").click(function(){
+  $(".assault-customization").toggle();
+  $(".medic-customization").hide();
+  $(".support-customization").hide();
+  $(".specialist-customization").hide();
+  $(".selected-class").text("CLASS: ASSAULT");
+  $(".Assault").css("background-color", "red");
+  $(".Medic").css("background-color", "black");
+  $(".Support").css("background-color", "black");
+  $(".Specialist").css("background-color", "black");
+  $("#class-check-assault").prop("checked", true);
+});
+$(".Medic").click(function(){
+  $(".medic-customization").toggle()
+  $(".assault-customization").hide();
+  $(".support-customization").hide();
+  $(".specialist-customization").hide();
+  $(".selected-class").text("CLASS: MEDIC");
+  $(".Assault").css("background-color", "black");
+  $(".Medic").css("background-color", "red");
+  $(".Support").css("background-color", "black");
+  $(".Specialist").css("background-color", "black");
+  $("#class-check-medic").prop("checked",true);
+});
+$(".Support").click(function(){
+  $(".support-customization").toggle();
+  $(".assault-customization").hide();
+  $(".medic-customization").hide();
+  $(".specialist-customization").hide();
+  $(".selected-class").text("CLASS: SUPPORT");
+  $(".Assault").css("background-color", "black");
+  $(".Medic").css("background-color", "black");
+  $(".Support").css("background-color", "red");
+  $(".Specialist").css("background-color", "black");
+  $("#class-check-support").prop("checked",true);
+});
+$(".Specialist").click(function(){
+  $(".specialist-customization").toggle();
+  $(".assault-customization").hide();
+  $(".medic-customization").hide();
+  $(".support-customization").hide();
+  $(".selected-class").text("CLASS: SPECIALIST");
+  $(".Assault").css("background-color", "black");
+  $(".Medic").css("background-color", "black");
+  $(".Support").css("background-color", "black");
+  $(".Specialist").css("background-color", "red");
+  $("#class-check-specialist").prop("checked",true);
+});
+/* Primary Weapons */
+$(".A280").click(function(){
+  $(".A280").css("background-color", "red");
+  $(".DDC-MR6").css("background-color", "black");
+  $(".SKZ").css("background-color", "black");
+  $(".OK-98").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: A280 BLASTER RIFLE");
+  $("#A280stats").css("display","block");
+  $("#DDC-MR6stats").css("display","none");
+  $("#SKZstats").css("display","none");
+  $("#OK-98stats-assault").css("display","none");
+  $("#primary-check-A280").prop("checked",true);
+});
+$(".DDC-MR6").click(function(){
+  $(".A280").css("background-color", "black");
+  $(".DDC-MR6").css("background-color", "red");
+  $(".SKZ").css("background-color", "black");
+  $(".OK-98").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: DDC-MR6 MODULAR RIFLE");
+  $("#A280stats").css("display","none");
+  $("#DDC-MR6stats").css("display","block");
+  $("#SKZstats").css("display","none");
+  $("#OK-98stats-assault").css("display","none");
+  $("#primary-check-DDC-MR6").prop("checked",true);
+});
+$(".SKZ").click(function(){
+  $(".A280").css("background-color", "black");
+  $(".DDC-MR6").css("background-color", "black");
+  $(".SKZ").css("background-color", "red");
+  $(".OK-98").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: SKZ SPORTING BLASTER");
+  $("#A280stats").css("display","none");
+  $("#DDC-MR6stats").css("display","none");
+  $("#SKZstats").css("display","block");
+  $("#OK-98stats-assault").css("display","none");
+  $("#primary-check-SKZ").prop("checked",true);
+});
+$(".EE-3").click(function(){
+  $(".EE-3").css("background-color", "red");
+  $(".ACP").css("background-color", "black");
+  $(".Bola").css("background-color", "black");
+  $(".OK-98").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: EE-3 BLASTER CARBINE");
+  $("#EE-3stats").css("display","block");
+  $("#ACPstats").css("display","none");
+  $("#Bolastats").css("display","none");
+  $("#OK-98stats-medic").css("display","none");
+  $("#primary-check-EE-3").prop("checked",true);
+});
+$(".ACP").click(function(){
+  $(".EE-3").css("background-color", "black");
+  $(".ACP").css("background-color", "red");
+  $(".Bola").css("background-color", "black");
+  $(".OK-98").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: ARAKYD ACP REPEATER");
+  $("#EE-3stats").css("display","none");
+  $("#ACPstats").css("display","block");
+  $("#Bolastats").css("display","none");
+  $("#OK-98stats-medic").css("display","none");
+  $("#primary-check-ACP").prop("checked",true);
+});
+$(".Bola").click(function(){
+  $(".EE-3").css("background-color", "black");
+  $(".ACP").css("background-color", "black");
+  $(".Bola").css("background-color", "red");
+  $(".OK-98").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: BOLA CARBINE");
+  $("#EE-3stats").css("display","none");
+  $("#ACPstats").css("display","none");
+  $("#Bolastats").css("display","block");
+  $("#OK-98stats-medic").css("display","none");
+  $("#primary-check-Bola").prop("checked",true);
+});
+$(".OK-98").click(function(){
+  $(".A280").css("background-color", "black");
+  $(".DDC-MR6").css("background-color", "black");
+  $(".SKZ").css("background-color", "black");
+  $(".OK-98").css("background-color", "red");
+  $(".EE-3").css("background-color", "black");
+  $(".ACP").css("background-color", "black");
+  $(".Bola").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: OK-98 BLASTER CARBINE");
+  $("#A280stats").css("display","none");
+  $("#DDC-MR6stats").css("display","none");
+  $("#SKZstats").css("display","none");
+  $("#EE-3stats").css("display","none");
+  $("#ACPstats").css("display","none");
+  $("#Bolastats").css("display","none");
+  $("#OK-98stats-assault").css("display","block");
+  $("#OK-98stats-medic").css("display","block");
+  $("#primary-check-OK-98").prop("checked",true);
+});
+$(".DLT19").click(function(){
+  $(".DLT19").css("background-color", "red");
+  $(".DHX").css("background-color", "black");
+  $(".lightrepeating").css("background-color", "black");
+  $(".scattergun").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: DLT-19 HEAVY BLASTER RIFLE");
+  $("#DLT19stats").css("display","block");
+  $("#DHXstats").css("display","none");
+  $("#lightrepeatingstats").css("display","none");
+  $("#scattergunstats").css("display","none");
+  $("#primary-check-DLT19").prop("checked",true);
+});
+$(".DHX").click(function(){
+  $(".DLT19").css("background-color", "black");
+  $(".DHX").css("background-color", "red");
+  $(".lightrepeating").css("background-color", "black");
+  $(".scattergun").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: BLASTECH DH-X HEAVY BLASTER RIFLE");
+  $("#DLT19stats").css("display","none");
+  $("#DHXstats").css("display","block");
+  $("#lightrepeatingstats").css("display","none");
+  $("#scattergunstats").css("display","none");
+  $("#primary-check-DHX").prop("checked",true);
+});
+$(".lightrepeating").click(function(){
+  $(".DLT19").css("background-color", "black");
+  $(".DHX").css("background-color", "black");
+  $(".lightrepeating").css("background-color", "red");
+  $(".scattergun").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: T-21 LIGHT REPEATING BLASTER RIFLE");
+  $("#DLT19stats").css("display","none");
+  $("#DHXstats").css("display","none");
+  $("#lightrepeatingstats").css("display","block");
+  $("#scattergunstats").css("display","none");
+  $("#primary-check-lightrepeating").prop("checked",true);
+});
+$(".scattergun").click(function(){
+  $(".DLT19").css("background-color", "black");
+  $(".DHX").css("background-color", "black");
+  $(".lightrepeating").css("background-color", "black");
+  $(".scattergun").css("background-color", "red");
+  $(".selected-primary").text("PRIMARY WEAPON: ADOSTIC ARMS 8-GAUGE SCATTER GUN");
+  $("#DLT19stats").css("display","none");
+  $("#DHXstats").css("display","none");
+  $("#lightrepeatingstats").css("display","none");
+  $("#scattergunstats").css("display","block");
+  $("#primary-check-scattergun").prop("checked",true);
+});
+$(".E11").click(function(){
+  $(".E11").css("background-color", "red");
+  $(".HBT4").css("background-color", "black");
+  $(".sandpanther").css("background-color", "black");
+  $(".czerka").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: E-11 SNIPER RIFLE");
+  $("#E11stats").css("display","block");
+  $("#HBT4stats").css("display","none");
+  $("#sandpantherstats").css("display","none");
+  $("#czerkastats").css("display","none");
+  $("#primary-check-E11").prop("checked",true);
+});
+$(".HBT4").click(function(){
+  $(".E11").css("background-color", "black");
+  $(".HBT4").css("background-color", "red");
+  $(".sandpanther").css("background-color", "black");
+  $(".czerka").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: HBT-4 HUNTING BLASTER");
+  $("#E11stats").css("display","none");
+  $("#HBT4stats").css("display","block");
+  $("#sandpantherstats").css("display","none");
+  $("#czerkastats").css("display","none");
+  $("#primary-check-HBT4").prop("checked",true);
+});
+$(".sandpanther").click(function(){
+  $(".E11").css("background-color", "black");
+  $(".HBT4").css("background-color", "black");
+  $(".sandpanther").css("background-color", "red");
+  $(".czerka").css("background-color", "black");
+  $(".selected-primary").text("PRIMARY WEAPON: MKV SAND PANTHER HUNTING RIFLE");
+  $("#E11stats").css("display","none");
+  $("#HBT4stats").css("display","none");
+  $("#sandpantherstats").css("display","block");
+  $("#czerkastats").css("display","none");
+  $("#primary-check-sandpanther").prop("checked",true);
+});
+$(".czerka").click(function(){
+  $(".E11").css("background-color", "black");
+  $(".HBT4").css("background-color", "black");
+  $(".sandpanther").css("background-color", "black");
+  $(".czerka").css("background-color", "red");
+  $(".selected-primary").text("PRIMARY WEAPON: CZERKA MODEL 39 SHARPSHOOTER");
+  $("#E11stats").css("display","none");
+  $("#HBT4stats").css("display","none");
+  $("#sandpantherstats").css("display","none");
+  $("#czerkastats").css("display","block");
+  $("#primary-check-czerka").prop("checked",true);
+});
+/* Secondary Weapons */
+$(".HL-27").click(function(){
+  $(".HL-27").css("background-color", "red");
+  $(".SE-14r").css("background-color", "black");
+  $(".DH-17").css("background-color", "black");
+  $(".DL-44").css("background-color", "black");
+  $(".selected-secondary").text("SECONDARY WEAPON: HL-27 LIGHT BLASTER PISTOL");
+  $("#HL-27stats-assault").css("display","block");
+  $("#HL-27stats-medic").css("display","block");
+  $("#HL-27stats-support").css("display","block");
+  $("#HL-27stats-specialist").css("display","block");
+  $("#SE-14rstats-assault").css("display","none");
+  $("#SE-14rstats-medic").css("display","none");
+  $("#SE-14rstats-support").css("display","none");
+  $("#SE-14rstats-specialist").css("display","none");
+  $("#DH-17stats-assault").css("display","none");
+  $("#DH-17stats-medic").css("display","none");
+  $("#DH-17stats-support").css("display","none");
+  $("#DH-17stats-specialist").css("display","none");
+  $("#DL-44stats-assault").css("display","none");
+  $("#DL-44stats-medic").css("display","none");
+  $("#DL-44stats-support").css("display","none");
+  $("#DL-44stats-specialist").css("display","none");
+  $("#secondary-check-HL-27").prop("checked",true);
+});
+$(".SE-14r").click(function(){
+  $(".HL-27").css("background-color", "black");
+  $(".SE-14r").css("background-color", "red");
+  $(".DH-17").css("background-color", "black");
+  $(".DL-44").css("background-color", "black");
+  $(".selected-secondary").text("SECONDARY WEAPON: SE-14R LIGHT REPEATING BLASTER PISTOL");
+  $("#HL-27stats-assault").css("display","none");
+  $("#HL-27stats-medic").css("display","none");
+  $("#HL-27stats-support").css("display","none");
+  $("#HL-27stats-specialist").css("display","none");
+  $("#SE-14rstats-assault").css("display","block");
+  $("#SE-14rstats-medic").css("display","block");
+  $("#SE-14rstats-support").css("display","block");
+  $("#SE-14rstats-specialist").css("display","block");
+  $("#DH-17stats-assault").css("display","none");
+  $("#DH-17stats-medic").css("display","none");
+  $("#DH-17stats-support").css("display","none");
+  $("#DH-17stats-specialist").css("display","none");
+  $("#DL-44stats-assault").css("display","none");
+  $("#DL-44stats-medic").css("display","none");
+  $("#DL-44stats-support").css("display","none");
+  $("#DL-44stats-specialist").css("display","none");
+  $("#secondary-check-SE-14r").prop("checked",true);
+});
+$(".DH-17").click(function(){
+  $(".HL-27").css("background-color", "black");
+  $(".SE-14r").css("background-color", "black");
+  $(".DH-17").css("background-color", "red");
+  $(".DL-44").css("background-color", "black");
+  $(".selected-secondary").text("SECONDARY WEAPON: DH-17 BLASTER PISTOL");
+  $("#HL-27stats-assault").css("display","none");
+  $("#HL-27stats-medic").css("display","none");
+  $("#HL-27stats-support").css("display","none");
+  $("#HL-27stats-specialist").css("display","none");
+  $("#SE-14rstats-assault").css("display","none");
+  $("#SE-14rstats-medic").css("display","none");
+  $("#SE-14rstats-support").css("display","none");
+  $("#SE-14rstats-specialist").css("display","none");
+  $("#DH-17stats-assault").css("display","block");
+  $("#DH-17stats-medic").css("display","block");
+  $("#DH-17stats-support").css("display","block");
+  $("#DH-17stats-specialist").css("display","block");
+  $("#DL-44stats-assault").css("display","none");
+  $("#DL-44stats-medic").css("display","none");
+  $("#DL-44stats-support").css("display","none");
+  $("#DL-44stats-specialist").css("display","none");
+  $("#secondary-check-DH-17").prop("checked",true);
+});
+$(".DL-44").click(function(){
+  $(".HL-27").css("background-color", "black");
+  $(".SE-14r").css("background-color", "black");
+  $(".DH-17").css("background-color", "black");
+  $(".DL-44").css("background-color", "red");
+  $(".selected-secondary").text("SECONDARY WEAPON: DL-44 HEAVY BLASTER PISTOL");
+  $("#HL-27stats-assault").css("display","none");
+  $("#HL-27stats-medic").css("display","none");
+  $("#HL-27stats-support").css("display","none");
+  $("#HL-27stats-specialist").css("display","none");
+  $("#SE-14rstats-assault").css("display","none");
+  $("#SE-14rstats-medic").css("display","none");
+  $("#SE-14rstats-support").css("display","none");
+  $("#SE-14rstats-specialist").css("display","none");
+  $("#DH-17stats-assault").css("display","none");
+  $("#DH-17stats-medic").css("display","none");
+  $("#DH-17stats-support").css("display","none");
+  $("#DH-17stats-specialist").css("display","none");
+  $("#DL-44stats-assault").css("display","block");
+  $("#DL-44stats-medic").css("display","block");
+  $("#DL-44stats-support").css("display","block");
+  $("#DL-44stats-specialist").css("display","block");
+  $("#secondary-check-DL-44").prop("checked",true);
+});
+/* Grenades */
+$(".fraggrenade").click(function(){
+  $(".fraggrenade").css("background-color", "red");
+  $(".armorpiercinggrenade").css("background-color", "black");
+  $(".plasmagrenade").css("background-color", "black");
+  $(".stungrenade").css("background-color", "black");
+  $(".smokegrenade").css("background-color", "black");
+  $(".knockoutgrenade").css("background-color", "black");
+  $(".infernogrenade").css("background-color", "black");
+  $(".mercygrenade").css("background-color", "black");
+  $(".thermaldet").css("background-color", "black");
+  $(".throwingknives").css("background-color", "black");
+  $(".plasmagrenade").css("background-color", "black");
+  $(".noisegrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: FRAG GRENADE");
+  $("#fraggrenadestats-assault").css("display","block");
+  $("#fraggrenadestats-medic").css("display","block");
+  $("#fraggrenadestats-support").css("display","block");
+  $("#fraggrenadestats-specialist").css("display","block");
+  $("#armorpiercinggrenadestats").css("display","none");
+  $("#plasmagrenadestats").css("display","none");
+  $("#smokegrenadestats").css("display","none");
+  $("#knockoutgrenadestats").css("display","none");
+  $("#stungrenadestats-assault").css("display","none");
+  $("#stungrenadestats-medic").css("display","none");
+  $("#mercygrenadestats").css("display","none");
+  $("#infernogrenadestats").css("display","none");
+  $("#thermaldetstats").css("display","none");
+  $("#throwingknivesstats").css("display","none");
+  $("#plasmagrenadestats-specialist").css("display","none");
+  $("#noisegrenadestats").css("display","none");
+  $("#grenade-check-fraggrenade").prop("checked",true);
+});
+$(".armorpiercinggrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".armorpiercinggrenade").css("background-color", "red");
+  $(".plasmagrenade").css("background-color", "black");
+  $(".stungrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: ARMOR PIERCING GRENADE");
+  $("#fraggrenadestats-assault").css("display","none");
+  $("#armorpiercinggrenadestats").css("display","block");
+  $("#plasmagrenadestats").css("display","none");
+  $("#stungrenadestats-assault").css("display","none");
+  $("#grenade-check-armorpiercinggrenade").prop("checked",true);
+});
+$(".plasmagrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".armorpiercinggrenade").css("background-color", "black");
+  $(".plasmagrenade").css("background-color", "red");
+  $(".stungrenade").css("background-color", "black");
+  $(".fraggrenade").css("background-color", "black");
+  $(".throwingknives").css("background-color", "black");
+  $(".noisegrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: PLASMA GRENADE");
+  $("#fraggrenadestats-assault").css("display","none");
+  $("#fraggrenadestats-specialist").css("display","none");
+  $("#armorpiercinggrenadestats").css("display","none");
+  $("#plasmagrenadestats").css("display","block");
+  $("#stungrenadestats-assault").css("display","none");
+  $("#fraggrenadestats-specialist").css("display","none");
+  $("#throwingknivesstats").css("display","none");
+  $("#plasmagrenadestats-specialist").css("display","block");
+  $("#noisegrenadestats").css("display","none");
+  $("#grenade-check-plasmagrenade").prop("checked",true);
+});
+$(".stungrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".armorpiercinggrenade").css("background-color", "black");
+  $(".plasmagrenade").css("background-color", "black");
+  $(".stungrenade").css("background-color", "red");
+  $(".smokegrenade").css("background-color", "black");
+  $(".knockoutgrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: STUN GRENADE");
+  $("#fraggrenadestats-assault").css("display","none");
+  $("#fraggrenadestats-medic").css("display","none");
+  $("#armorpiercinggrenadestats").css("display","none");
+  $("#plasmagrenadestats").css("display","none");
+  $("#smokegrenadestats").css("display","none");
+  $("#knockoutgrenadestats").css("display","none");
+  $("#stungrenadestats-assault").css("display","block");
+  $("#stungrenadestats-medic").css("display","block");
+  $("#grenade-check-stungrenade").prop("checked",true);
+});
+$(".smokegrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".smokegrenade").css("background-color", "red");
+  $(".knockoutgrenade").css("background-color", "black");
+  $(".stungrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: SMOKE GRENADE");
+  $("#fraggrenadestats-medic").css("display","none");
+  $("#smokegrenadestats").css("display","block");
+  $("#knockoutgrenadestats").css("display","none");
+  $("#stungrenadestats-medic").css("display","none");
+  $("#grenade-check-smokegrenade").prop("checked",true);
+});
+$(".knockoutgrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".smokegrenade").css("background-color", "black");
+  $(".knockoutgrenade").css("background-color", "red");
+  $(".stungrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: KNOCKOUT GRENADE");
+  $("#fraggrenadestats-medic").css("display","none");
+  $("#smokegrenadestats").css("display","none");
+  $("#knockoutgrenadestats").css("display","block");
+  $("#stungrenadestats-medic").css("display","none");
+  $("#grenade-check-knockoutgrenade").prop("checked",true);
+});
+$(".mercygrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".mercygrenade").css("background-color", "red");
+  $(".infernogrenade").css("background-color", "black");
+  $(".thermaldet").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: MERCY GRENADE");
+  $("#fraggrenadestats-support").css("display","none");
+  $("#mercygrenadestats").css("display","block");
+  $("#infernogrenadestats").css("display","none");
+  $("#thermaldetstats").css("display","none");
+  $("#grenade-check-mercygrenade").prop("checked",true);
+});
+$(".infernogrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".mercygrenade").css("background-color", "black");
+  $(".infernogrenade").css("background-color", "red");
+  $(".thermaldet").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: INFERNO GRENADE");
+  $("#fraggrenadestats-support").css("display","none");
+  $("#mercygrenadestats").css("display","none");
+  $("#infernogrenadestats").css("display","block");
+  $("#thermaldetstats").css("display","none");
+  $("#grenade-check-infernogrenade").prop("checked",true);
+});
+$(".thermaldet").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".mercygrenade").css("background-color", "black");
+  $(".infernogrenade").css("background-color", "black");
+  $(".thermaldet").css("background-color", "red");
+  $(".selected-grenade").text("GRENADE: THERMAL DETONATOR");
+  $("#fraggrenadestats-support").css("display","none");
+  $("#mercygrenadestats").css("display","none");
+  $("#infernogrenadestats").css("display","none");
+  $("#thermaldetstats").css("display","block");
+  $("#grenade-check-thermaldet").prop("checked",true);
+});
+$(".noisegrenade").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".throwingknives").css("background-color", "black");
+  $(".plasmagrenade").css("background-color", "black");
+  $(".noisegrenade").css("background-color", "red");
+  $(".selected-grenade").text("GRENADE: NOISE GRENADE");
+  $("#fraggrenadestats-specialist").css("display","none");
+  $("#throwingknivesstats").css("display","none");
+  $("#plasmagrenadestats-specialist").css("display","none");
+  $("#noisegrenadestats").css("display","block");
+  $("#grenade-check-noisegrenade").prop("checked",true);
+});
+$(".throwingknives").click(function(){
+  $(".fraggrenade").css("background-color", "black");
+  $(".throwingknives").css("background-color", "red");
+  $(".plasmagrenade").css("background-color", "black");
+  $(".noisegrenade").css("background-color", "black");
+  $(".selected-grenade").text("GRENADE: THROWING KNIVES");
+  $("#fraggrenadestats-specialist").css("display","none");
+  $("#throwingknivesstats").css("display","block");
+  $("#plasmagrenadestats-specialist").css("display","none");
+  $("#noisegrenadestats").css("display","none");
+  $("#grenade-check-throwingknives").prop("checked",true);
+});
+/* Melee Weapons */
+$(".blastknuckles").click(function(){
+  $(".blastknuckles").css("background-color", "red");
+  $(".stunbaton").css("background-color", "black");
+  $(".vibroblade").css("background-color", "black");
+  $(".punchdagger").css("background-color", "black");
+  $(".selected-melee").text("MELEE: BLAST KNUCKLES");
+  $("#blastknucklesstats-assault").css("display","block");
+  $("#blastknucklesstats-medic").css("display","block");
+  $("#blastknucklesstats-support").css("display","block");
+  $("#blastknucklesstats-specialist").css("display","block");
+  $("#stunbatonstats-assault").css("display","none");
+  $("#stunbatonstats-medic").css("display","none");
+  $("#stunbatonstats-support").css("display","none");
+  $("#stunbatonstats-specialist").css("display","none");
+  $("#vibrobladestats-assault").css("display","none");
+  $("#vibrobladestats-medic").css("display","none");
+  $("#vibrobladestats-support").css("display","none");
+  $("#vibrobladestats-specialist").css("display","none");
+  $("#punchdaggerstats-assault").css("display","none");
+  $("#punchdaggerstats-medic").css("display","none");
+  $("#punchdaggerstats-support").css("display","none");
+  $("#punchdaggerstats-specialist").css("display","none");
+  $("#melee-check-blastknuckles").prop("checked",true);
+});
+$(".stunbaton").click(function(){
+  $(".blastknuckles").css("background-color", "black");
+  $(".stunbaton").css("background-color", "red");
+  $(".vibroblade").css("background-color", "black");
+  $(".punchdagger").css("background-color", "black");
+  $(".selected-melee").text("MELEE: STUN BATON");
+  $("#blastknucklesstats-assault").css("display","none");
+  $("#blastknucklesstats-medic").css("display","none");
+  $("#blastknucklesstats-support").css("display","none");
+  $("#blastknucklesstats-specialist").css("display","none");
+  $("#stunbatonstats-assault").css("display","block");
+  $("#stunbatonstats-medic").css("display","block");
+  $("#stunbatonstats-support").css("display","block");
+  $("#stunbatonstats-specialist").css("display","block");
+  $("#vibrobladestats-assault").css("display","none");
+  $("#vibrobladestats-medic").css("display","none");
+  $("#vibrobladestats-support").css("display","none");
+  $("#vibrobladestats-specialist").css("display","none");
+  $("#punchdaggerstats-assault").css("display","none");
+  $("#punchdaggerstats-medic").css("display","none");
+  $("#punchdaggerstats-support").css("display","none");
+  $("#punchdaggerstats-specialist").css("display","none");
+  $("#melee-check-stunbaton").prop("checked",true);
+});
+$(".vibroblade").click(function(){
+  $(".blastknuckles").css("background-color", "black");
+  $(".stunbaton").css("background-color", "black");
+  $(".vibroblade").css("background-color", "red");
+  $(".punchdagger").css("background-color", "black");
+  $(".selected-melee").text("MELEE: VIBROBLADE");
+  $("#blastknucklesstats-assault").css("display","none");
+  $("#blastknucklesstats-medic").css("display","none");
+  $("#blastknucklesstats-support").css("display","none");
+  $("#blastknucklesstats-specialist").css("display","none");
+  $("#stunbatonstats-assault").css("display","none");
+  $("#stunbatonstats-medic").css("display","none");
+  $("#stunbatonstats-support").css("display","none");
+  $("#stunbatonstats-specialist").css("display","none");
+  $("#vibrobladestats-assault").css("display","block");
+  $("#vibrobladestats-medic").css("display","block");
+  $("#vibrobladestats-support").css("display","block");
+  $("#vibrobladestats-specialist").css("display","block");
+  $("#punchdaggerstats-assault").css("display","none");
+  $("#punchdaggerstats-medic").css("display","none");
+  $("#punchdaggerstats-support").css("display","none");
+  $("#punchdaggerstats-specialist").css("display","none");
+  $("#melee-check-vibroblade").prop("checked",true);
+});
+$(".punchdagger").click(function(){
+  $(".blastknuckles").css("background-color", "black");
+  $(".stunbaton").css("background-color", "black");
+  $(".vibroblade").css("background-color", "black");
+  $(".punchdagger").css("background-color", "red");
+  $(".selected-melee").text("MELEE: PUNCH DAGGER");
+  $("#blastknucklesstats-assault").css("display","none");
+  $("#blastknucklesstats-medic").css("display","none");
+  $("#blastknucklesstats-support").css("display","none");
+  $("#blastknucklesstats-specialist").css("display","none");
+  $("#stunbatonstats-assault").css("display","none");
+  $("#stunbatonstats-medic").css("display","none");
+  $("#stunbatonstats-support").css("display","none");
+  $("#stunbatonstats-specialist").css("display","none");
+  $("#vibrobladestats-assault").css("display","none");
+  $("#vibrobladestats-medic").css("display","none");
+  $("#vibrobladestats-support").css("display","none");
+  $("#vibrobladestats-specialist").css("display","none");
+  $("#punchdaggerstats-assault").css("display","block");
+  $("#punchdaggerstats-medic").css("display","block");
+  $("#punchdaggerstats-support").css("display","block");
+  $("#punchdaggerstats-specialist").css("display","block");
+  $("#melee-check-punchdagger").prop("checked",true);
+});
+/* Gadgets */
+$(".atlauncher").click(function(){
+  $(".atlauncher").css("background-color", "red");
+  $(".commandomortar").css("background-color", "black");
+  $(".breachingcharge").css("background-color", "black");
+  $(".atmine").css("background-color", "black");
+  $(".shapedexplosivecharge").css("background-color", "black");
+  $(".malaxan").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: ARMOR PIERCING GRENADE LAUNCHER");
+  $("#atlauncherstats").css("display","block");
+  $("#commandomortarstats").css("display","none");
+  $("#breachingchargestats").css("display","none");
+  $("#atminestats").css("display","none");
+  $("#atlauncherstats-support").css("display","block");
+  $("#shapedexplosivechargestats").css("display","none");
+  $("#atminestats-support").css("display","none");
+  $("#malaxanstats").css("display","none");
+  $("#gadget1-check-atlauncher").prop("checked",true);
+});
+$(".commandomortar").click(function(){
+  $(".atlauncher").css("background-color", "black");
+  $(".commandomortar").css("background-color", "red");
+  $(".breachingcharge").css("background-color", "black");
+  $(".atmine").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: COMMANDO MORTAR");
+  $("#atlauncherstats").css("display","none");
+  $("#commandomortarstats").css("display","block");
+  $("#breachingchargestats").css("display","none");
+  $("#atminestats").css("display","none");
+  $("#gadget1-check-commandomortar").prop("checked",true);
+});
+$(".breachingcharge").click(function(){
+  $(".atlauncher").css("background-color", "black");
+  $(".commandomortar").css("background-color", "black");
+  $(".breachingcharge").css("background-color", "red");
+  $(".atmine").css("background-color", "black");
+  $(".shapedexplosivecharge").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: BREACHING CHARGE");
+  $("#atlauncherstats").css("display","none");
+  $("#commandomortarstats").css("display","none");
+  $("#breachingchargestats").css("display","block");
+  $("#atminestats").css("display","none");
+  $("#gadget1-check-breachingcharge").prop("checked",true);
+});
+$(".atmine").click(function(){
+  $(".atlauncher").css("background-color", "black");
+  $(".commandomortar").css("background-color", "black");
+  $(".breachingcharge").css("background-color", "black");
+  $(".atmine").css("background-color", "red");
+  $(".shapedexplosivecharge").css("background-color", "black");
+  $(".malaxan").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: ANTI-TANK MINE");
+  $("#atlauncherstats").css("display","none");
+  $("#commandomortarstats").css("display","none");
+  $("#breachingchargestats").css("display","none");
+  $("#atminestats").css("display","block");
+  $("#atlauncherstats-support").css("display","none");
+  $("#shapedexplosivechargestats").css("display","none");
+  $("#atminestats-support").css("display","block");
+  $("#malaxanstats").css("display","none");
+  $("#gadget1-check-atmine").prop("checked",true);
+});
+  $(".fraglauncher").click(function(){
+  $(".fraglauncher").css("background-color", "red");
+  $(".apmine").css("background-color", "black");
+  $(".magcharge").css("background-color", "black");
+  $(".miniflame").css("background-color", "black");
+  $(".datapurgegrenade").css("background-color", "black");
+  $(".apmine").css("background-color", "black");
+  $(".magcharge").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: FRAG GRENADE LAUNCHER");
+  $("#fraglauncherstats").css("display","block");
+  $("#apminestats-assault").css("display","none");
+  $("#magchargestats").css("display","none");
+  $("#miniflamestats").css("display","none");
+  $("#datapurgegrenadestats").css("display","none");
+  $("#apminestats-specialist").css("display","none");
+  $("#magchargestats-specialist").css("display","none");
+  $("#fraglauncherstats-specialist").css("display","block");
+  $("#gadget2-check-fraglauncher").prop("checked",true);
+``});
+  $(".apmine").click(function(){
+  $(".fraglauncher").css("background-color", "black");
+  $(".apmine").css("background-color", "red");
+  $(".magcharge").css("background-color", "black");
+  $(".miniflame").css("background-color", "black");
+  $(".smokegrenadelauncher").css("background-color", "black");
+  $(".knockoutmine").css("background-color", "black");
+  $(".poisongrenades").css("background-color", "black");
+  $(".datapurgegrenade").css("background-color", "black");
+  $(".fraglauncher").css("background-color", "black");
+  $(".magcharge").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: ANTI PERSONNEL MINE");
+  $("#fraglauncherstats").css("display","none");
+  $("#apminestats-assault").css("display","block");
+  $("#apminestats-medic").css("display","block");
+  $("#magchargestats").css("display","none");
+  $("#miniflamestats").css("display","none");
+  $("#smokegrenadelauncherstats").css("display","none");
+  $("#knockoutminestats").css("display","none");
+  $("#poisongrenadesstats").css("display","none");
+  $("#datapurgegrenadestats").css("display","none");
+  $("#apminestats-specialist").css("display","block");
+  $("#magchargestats-specialist").css("display","none");
+  $("#fraglauncherstats-specialist").css("display","none");
+  $("#gadget2-check-apmine").prop("checked",true);
+  ``});
+  $(".magcharge").click(function(){
+  $(".fraglauncher").css("background-color", "black");
+  $(".apmine").css("background-color", "black");
+  $(".magcharge").css("background-color", "red");
+  $(".miniflame").css("background-color", "black");
+  $(".datapurgegrenade").css("background-color", "black");
+  $(".apmine").css("background-color", "black");
+  $(".fraglauncher").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: MAGNETIC EXPLOSIVE CHARGE");
+  $("#fraglauncherstats").css("display","none");
+  $("#apminestats-assault").css("display","none");
+  $("#magchargestats").css("display","block");
+  $("#miniflamestats").css("display","none");
+  $("#datapurgegrenadestats").css("display","none");
+  $("#apminestats-specialist").css("display","none");
+  $("#magchargestats-specialist").css("display","block");
+  $("#fraglauncherstats-specialist").css("display","none");
+  $("#gadget2-check-magcharge").prop("checked",true);
+    });
+  $(".miniflame").click(function(){
+  $(".fraglauncher").css("background-color", "black");
+  $(".apmine").css("background-color", "black");
+  $(".magcharge").css("background-color", "black");
+  $(".miniflame").css("background-color", "red");
+  $(".selected-gadget2").text("GADGET 2: FLAME MINIPROJECTOR");
+  $("#fraglauncherstats").css("display","none");
+  $("#apminestats-assault").css("display","none");
+  $("#magchargestats").css("display","none");
+  $("#miniflamestats").css("display","block");
+  $("#gadget2-check-miniflame").prop("checked",true);
+  ``});
+$(".emergencymedpac-medisensor").click(function(){
+  $(".emergencymedpac-medisensor").css("background-color", "red");
+  $(".stimpacks").css("background-color", "black");
+  $(".medpac-medisensor").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: EMERGENCY MEDPAC + MEDISENSOR");
+  $("#emergencymedpac-medisensor-stats").css("display","block");
+  $("#stimpacksstats").css("display","none");
+  $("#medpac-medisensor-stats").css("display","none");
+  $("#gadget1-check-emergencymedpac-medisensor").prop("checked",true);
+  ``});
+$(".stimpacks").click(function(){
+  $(".emergencymedpac-medisensor").css("background-color", "black");
+  $(".stimpacks").css("background-color", "red");
+  $(".medpac-medisensor").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: STIMPACKS");
+  $("#emergencymedpac-medisensor-stats").css("display","none");
+  $("#stimpacksstats").css("display","block");
+  $("#medpac-medisensor-stats").css("display","none");
+  $("#gadget1-check-stimpacks").prop("checked",true);
+  ``});
+$(".medpac-medisensor").click(function(){
+  $(".emergencymedpac-medisensor").css("background-color", "black");
+  $(".stimpacks").css("background-color", "black");
+  $(".medpac-medisensor").css("background-color", "red");
+  $(".selected-gadget1").text("GADGET 1: MEDPAC + MEDISENSOR");
+  $("#emergencymedpac-medisensor-stats").css("display","none");
+  $("#stimpacksstats").css("display","none");
+  $("#medpac-medisensor-stats").css("display","block");
+  $("#gadget1-check-medpac-medisensor").prop("checked",true);
+  ``});
+$(".smokegrenadelauncher").click(function(){
+  $(".smokegrenadelauncher").css("background-color", "red");
+  $(".apmine").css("background-color", "black");
+  $(".knockoutmine").css("background-color", "black");
+  $(".poisongrenades").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: SMOKE GRENADE LAUNCHER");
+  $("#smokegrenadelauncherstats").css("display","block");
+  $("#apminestats-medic").css("display","none");
+  $("#knockoutminestats").css("display","none");
+  $("#poisongrenadesstats").css("display","none");
+  $("#gadget2-check-smokegrenadelauncher").prop("checked",true);
+  ``});
+$(".knockoutmine").click(function(){
+  $(".smokegrenadelauncher").css("background-color", "black");
+  $(".apmine").css("background-color", "black");
+  $(".knockoutmine").css("background-color", "red");
+  $(".poisongrenades").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: KNOCKOUT MINE");
+  $("#smokegrenadelauncherstats").css("display","none");
+  $("#apminestats-medic").css("display","none");
+  $("#knockoutminestats").css("display","block");
+  $("#poisongrenadesstats").css("display","none");
+  $("#gadget2-check-knockoutmine").prop("checked",true);
+  ``});
+$(".poisongrenades").click(function(){
+  $(".smokegrenadelauncher").css("background-color", "black");
+  $(".apmine").css("background-color", "black");
+  $(".knockoutmine").css("background-color", "black");
+  $(".poisongrenades").css("background-color", "red");
+  $(".selected-gadget2").text("GADGET 2: POISON GAS GRENADES");
+  $("#smokegrenadelauncherstats").css("display","none");
+  $("#apminestats-medic").css("display","none");
+  $("#knockoutminestats").css("display","none");
+  $("#poisongrenadesstats").css("display","block");
+  $("#gadget2-check-poisongrenades").prop("checked",true);
+  ``});
+$(".entrenchingtool").click(function(){
+  $(".entrenchingtool").css("background-color", "red");
+  $(".toolrepairkit").css("background-color", "black");
+  $(".demolitionsscanner").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: ENTRENCHING TOOL + EXTRA RELOADS");
+  $("#entrenchingtoolstats").css("display","block");
+  $("#toolrepairkitstats").css("display","none");
+  $("#demolitionsscannerstats").css("display","none");
+  $("#gadget2-check-entrenchingtool").prop("checked",true);
+  ``});
+$(".toolrepairkit").click(function(){
+  $(".entrenchingtool").css("background-color", "black");
+  $(".toolrepairkit").css("background-color", "red");
+  $(".demolitionsscanner").css("background-color", "black");
+  $(".selected-gadget2").text("GADGET 2: REPAIR TOOL KIT + EXTRA RELOADS");
+  $("#entrenchingtoolstats").css("display","none");
+  $("#toolrepairkitstats").css("display","block");
+  $("#demolitionsscannerstats").css("display","none");
+  $("#gadget2-check-toolrepairkit").prop("checked",true);
+  ``});
+$(".demolitionsscanner").click(function(){
+  $(".entrenchingtool").css("background-color", "black");
+  $(".toolrepairkit").css("background-color", "black");
+  $(".demolitionsscanner").css("background-color", "red");
+  $(".selected-gadget2").text("GADGET 2: DEMOLITIONS SCANNER");
+  $("#entrenchingtoolstats").css("display","none");
+  $("#toolrepairkitstats").css("display","none");
+  $("#demolitionsscannerstats").css("display","block");
+  $("#gadget2-check-demolitionsscanner").prop("checked",true);
+  ``});
+$(".shapedexplosivecharge").click(function(){
+  $(".shapedexplosivecharge").css("background-color", "red");
+  $(".atlauncher").css("background-color", "black");
+  $(".atmine").css("background-color", "black");
+  $(".malaxan").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: SHAPED EXPLOSIVE CHARGES");
+  $("#atlauncherstats-support").css("display","none");
+  $("#shapedexplosivechargestats").css("display","block");
+  $("#atminestats-support").css("display","none");
+  $("#malaxanstats").css("display","none");
+  $("#gadget1-check-shapedexplosivecharge").prop("checked",true);
+  ``});
+$(".malaxan").click(function(){
+  $(".shapedexplosivecharge").css("background-color", "black");
+  $(".atlauncher").css("background-color", "black");
+  $(".atmine").css("background-color", "black");
+  $(".malaxan").css("background-color", "red");
+  $(".selected-gadget1").text("GADGET 1: MALAXAN Z50 GRENADE LAUNCHER");
+  $("#atlauncherstats-support").css("display","none");
+  $("#shapedexplosivechargestats").css("display","none");
+  $("#atminestats-support").css("display","none");
+  $("#malaxanstats").css("display","block");
+  $("#gadget1-check-malaxan").prop("checked",true);
+  ``});
+$(".reconremote-electrobinocs").click(function(){
+  $(".reconremote-electrobinocs").css("background-color", "red");
+  $(".camopaint-disguisekit").css("background-color", "black");
+  $(".lockbreaker-slicergear").css("background-color", "black");
+  $(".ghilliesuit-camonetting").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: RECON REMOTE + ELECTROBINOCULARS");
+  $("#reconremote-electrobinocs-stats").css("display","block");
+  $("#camopaint-disguisekit-stats").css("display","none");
+  $("#lockbreaker-slicergear-stats").css("display","none");
+  $("#ghilliesuit-camonetting-stats").css("display","none");
+  $("#gadget1-check-reconremote-electrobinocs").prop("checked",true);
+  ``});
+$(".camopaint-disguisekit").click(function(){
+  $(".reconremote-electrobinocs").css("background-color", "black");
+  $(".camopaint-disguisekit").css("background-color", "red");
+  $(".lockbreaker-slicergear").css("background-color", "black");
+  $(".ghilliesuit-camonetting").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: CAMOUFLAGE PAINT + DISGUISE KIT");
+  $("#reconremote-electrobinocs-stats").css("display","none");
+  $("#camopaint-disguisekit-stats").css("display","block");
+  $("#lockbreaker-slicergear-stats").css("display","none");
+  $("#ghilliesuit-camonetting-stats").css("display","none");
+  $("#gadget1-check-camopaint-disguisekit").prop("checked",true);
+  ``});
+$(".lockbreaker-slicergear").click(function(){
+  $(".reconremote-electrobinocs").css("background-color", "black");
+  $(".camopaint-disguisekit").css("background-color", "black");
+  $(".lockbreaker-slicergear").css("background-color", "red");
+  $(".ghilliesuit-camonetting").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: ELECTRONIC LOCK BREAKER + SLICER GEAR");
+  $("#reconremote-electrobinocs-stats").css("display","none");
+  $("#camopaint-disguisekit-stats").css("display","none");
+  $("#lockbreaker-slicergear-stats").css("display","block");
+  $("#ghilliesuit-camonetting-stats").css("display","none");
+  $("#gadget1-check-lockbreaker-slicergear").prop("checked",true);
+  ``});
+$(".ghilliesuit-camonetting").click(function(){
+  $(".reconremote-electrobinocs").css("background-color", "black");
+  $(".camopaint-disguisekit").css("background-color", "black");
+  $(".lockbreaker-slicergear").css("background-color", "black");
+  $(".ghilliesuit-camonetting").css("background-color", "red");
+  $(".selected-gadget1").text("GADGET 1: HOLOGRAPHIC GHILLIE SUIT + CAMOUFLAGE NETTING");
+  $("#reconremote-electrobinocs-stats").css("display","none");
+  $("#camopaint-disguisekit-stats").css("display","none");
+  $("#lockbreaker-slicergear-stats").css("display","none");
+  $("#ghilliesuit-camonetting-stats").css("display","block");
+  $("#gadget1-check-ghilliesuit-camonetting").prop("checked",true);
+  ``});
+$(".datapurgegrenade").click(function(){
+  $(".datapurgegrenade").css("background-color", "red");
+  $(".apmine").css("background-color", "black");
+  $(".fraglauncher").css("background-color", "black");
+  $(".magcharge").css("background-color", "black");
+  $(".selected-gadget1").text("GADGET 1: DATA-PURGE GRENADE + ION GRENADE");
+  $("#datapurgegrenadestats").css("display","block");
+  $("#apminestats-specialist").css("display","none");
+  $("#magchargestats-specialist").css("display","none");
+  $("#fraglauncherstats-specialist").css("display","none");
+  $("#gadget1-check-datapurgegrenade").prop("checked",true);
+  ``});
+
+/* Roles */
+$(".role-scout").click(function(){
+  $(".role-scout").css("background-color", "red");
+  $(".role-gunner").css("background-color", "black");
+  $(".selected-role").text("ROLE: SCOUT");
+  $("#role-check-scout").prop("checked", true);
+});
+$(".role-gunner").click(function(){
+  $(".role-scout").css("background-color", "black");
+  $(".role-gunner").css("background-color", "red")
+  $(".selected-role").text("ROLE: GUNNER");
+  $("#role-check-gunner").prop("checked", true);
+});
+$(".role-combatmedic").click(function(){
+  $(".role-combatmedic").css("background-color", "red");
+  $(".role-gunner").css("background-color", "black")
+  $(".selected-role").text("ROLE: COMBAT MEDIC");
+  $("#role-check-combatmedic").prop("checked", true);
+});
+$(".role-fieldsurgeon").click(function(){
+  $(".role-combatmedic").css("background-color", "black");
+  $(".role-fieldsurgeon").css("background-color", "red")
+  $(".selected-role").text("ROLE: FIELD SURGEON");
+  $("#role-check-fieldsurgeon").prop("checked", true);
+});
+$(".role-heavy").click(function(){
+  $(".role-heavy").css("background-color", "red");
+  $(".role-mechanic").css("background-color", "black")
+  $(".selected-role").text("ROLE: HEAVY");
+  $("#role-check-heavy").prop("checked", true);
+});
+$(".role-mechanic").click(function(){
+  $(".role-heavy").css("background-color", "black");
+  $(".role-mechanic").css("background-color", "red")
+  $(".selected-role").text("ROLE: SABOTEUR");
+  $("#role-check-mechanic").prop("checked", true);
+});
+$(".role-recon").click(function(){
+  $(".role-recon").css("background-color", "red");
+  $(".role-tbd").css("background-color", "black")
+  $(".selected-role").text("ROLE: RECON");
+  $("#role-check-recon").prop("checked", true);
+});
+$(".role-tbd").click(function(){
+  $(".role-recon").css("background-color", "black");
+  $(".role-tbd").css("background-color", "red")
+  $(".selected-role").text("ROLE: SNIPER");
+  $("#role-check-tbd").prop("checked", true);
+});
+
+  /* Character Sheet Button */
+  $(".generate-character-sheet").click(function(){
+
+    $("#inventory").text("INVENTORY");
+    $("#misc1").text("1x Breath Mask (Encumbrance 1)");
+    $("#misc2").text("1x Load Bearing Gear (Encumbrance Threshold +3)");
+    $("#misc3").text("1x Modular Backpack w/ 4 Extra Pockets(Encumbrance Threshold +8)");
+    $("#misc4").text("1x Utility Belt (Encumbrance Threshold +1)");
+    $("#misc4").text("1x Canteen (Encumbrance 0)");
+    $("#misc5").text("1x Handheld Comlink (Encumbrance 0)");
+    $("#misc6").text("1x Stimpack (Encumbrance 0)");
+    $("#misc7").text("1x Extra Reload (Encumbrance 0)");
+    $("#misc8").text("1x Glow Rod (Encumbrance 1)");
+    $("#misc9").text("3x Ration Packs (Encumbrance 1)");
+    /* Primary Weapon */
+    if ($("#primary-check-A280").prop("checked") == true) {
+      $("#inventory-primary").text("1x A280 Blaster Rifle (Ranged(Heavy), Dam 9, Crit 3, Range: Long, Encumbrance: 4, Hard Points:4, Special: Stun Setting)")
+    } else if ($("#primary-check-DDC-MR6").prop("checked") == true) {
+      $("#inventory-primary").text("1x DDC-MR6 Modular Rifle (Ranged (Heavy), Dam 7, Crit 3, Range: Medium, Encumbrance: 3, Hard Points: 6, Special: Stun Setting, Notes: May make Avg Mechanics check to add or remove attachment as an action)")
+      $("#inventory-primary").after("           Marksman Barrel (Extends weapon range by one step.)");
+      $("#inventory-primary").after("Under-barrel Grenade Launcher (Fires 40mm HE grenades. Range: Medium, Limited Ammo 1, Slow Firing 1. Comes with 2 extra reloads.)");
+    } else if ($("#primary-check-SKZ").prop("checked") == true) {
+      $("#inventory-primary").text("1x SKZ Sporting Blaster (Ranged(Heavy), Dam 8, Crit 4, Range: Long, Encumbrance: 3, Hard Points: 4, Special: Stun Setting)")
+    } else if ($("#primary-check-OK-98").prop("checked") == true) {
+      $("#inventory-primary").text("1x OK-98 Blaster Carbine (Ranged(Heavy), Dam 9, Crit 3, Range: Medium, Encumbrance: 4, Hard Points: 3, Special: Stun Setting, Notes: May ignore first 'out of ammo' Despair OR make Easy Mechanics check to increase damage by 2 (Modified weapon may explode on Despair))")
+    } else if ($("#primary-check-EE-3").prop("checked") == true) {
+      $("#inventory-primary").text("1x EE-3 Blaster Carbine (Ranged(Heavy), Dam 9, Crit 3, Range: Medium, Encumbrance: 3, Hard Points: 4, Special: Stun Setting)");
+    } else if ($("#primary-check-ACP").prop("checked") == true) {
+      $("#inventory-primary").text("1x Arakyd ACP Repeater (Ranged(Heavy), Dam 9, Crit 3, Range: Medium, Encumbrance: 3, Hard Points: 4, Special: Stun Setting)");
+    } else if ($("#primary-check-Bola").prop("checked") == true) {
+      $("#inventory-primary").text("1x Bola Carbine (Ranged(Heavy), Dam 8, Crit 3, Range: Medium, Encumbrance: 3, Hard Points: 3, Special: Accurate 1, Ensnare)");
+    } else if ($("#primary-check-DLT19").prop("checked") == true) {
+      $("#inventory-primary").text("1x DLT-19 Heavy Blaster (Ranged(Heavy), Dam 10, Crit 3, Range: Long, Encumbrance: 6, Hard Points: 4, Special: Auto-fire, Cumbersome 3)");
+    } else if ($("#primary-check-DHX").prop("checked") == true) {
+      $("#inventory-primary").text("1x BlasTech DH-X Heavy Blaster Rifle (Ranged(Heavy), Dam 10, Crit 3, Range: Long, Encumbrance: 7, Hard Points: 4, Special: Cumbersome 3, Pierce 2)");
+    } else if ($("#primary-check-lightrepeating").prop("checked") == true) {
+      $("#inventory-primary").text("1x T-21 Light Repeating Blaster Rifle (Ranged(Heavy), Dam 11, Crit 3, Range: Long, Encumbrance: 7, Hard Points: 4, Special: Auto-fire, Cumbersome 4, Pierce 1)");
+    } else if ($("#primary-check-scattergun").prop("checked") == true) {
+      $("#inventory-primary").text("1x Adostic Arms 8-Gauge Scatter Gun (Ranged(Heavy), Dam 7, Crit 6, Range: Short, Encumbrance: 3, Hard Points: 2, Special: Blast 3, Knockdown, Limited Ammo 6, Notes: Comes with 6 reloads. Despair may trigger a weapon jam, which requires an Average Mechanics check to clear.)");
+    } else if ($("#primary-check-E11").prop("checked") == true) {
+      $("#inventory-primary").text("1x BlasTech E-11 Sniper Rifle (Ranged(Heavy), Dam 10, Crit 3, Range: Extreme, Encumbrance: 6, Hard Points: 3, Special: Accurate 1, Cumbersome 3, Pierce 2, Slow Firing 1)");
+    } else if ($("#primary-check-HBT4").prop("checked") == true) {
+      $("#inventory-primary").text("1x Herloss Hbt-4 Hunting Blaster (Ranged(Heavy), Dam 10, Crit 3, Range: Medium, Encumbrance: 3, Hard Points: 2, Special: Cumbersome 2, Stun Setting)");
+    } else if ($("#primary-check-sandpanther").prop("checked") == true) {
+      $("#inventory-primary").text("1x Coronet Arms Mk.V Sand Panther Hunting Rifle (Ranged(Heavy), Dam 7, Crit 5, Range: Long, Encumbrance: 5, Hard Points: 2, Special: Accurate 1, Cumbersome 2, Limited Ammo 4, Notes: Comes with 6 reloads. Despair may trigger a weapon jam, which requires an Average Mechanics check to clear.) ");
+    } else if ($("#primary-check-czerka").prop("checked") == true) {
+      $("#inventory-primary").text("1x Czerka Model 38 Sharpshooter (Ranged(Heavy), Dam 8, Crit 3, Range: Extreme, Encumbrance: 5, Hard Points: 4, Special: Accurate 2, Pierce 3, Limited Ammo 4, Notes: Before start, make Hard Mechanics check to keep Accurate 2. Despair may trigger a weapon jam, which requires an Average Mechanics check to clear.)");
+    } else {
+      $("#inventory-primary").text("No Primary Selected")
+    }
+
+    /* Secondary Weapon */
+    if ($("#secondary-check-HL-27").prop("checked") == true) {
+      $("#inventory-secondary").text("1x HL-27 Light Blaster Pistol (Ranged(Light), Dam 5, Crit 3, Range: Medium, Encumbrance: 1, Hard Points: 2, Special: Accurate 1, Stun Setting)")
+    } else if ($("#secondary-check-SE-14r").prop("checked") == true) {
+      $("#inventory-secondary").text("1x SE-14r Light Repeating Blaster Pistol (Ranged(Light), Dam 6, Crit 3, Range: Medium, Encumbrance: 2, Hard Points: 3, Special: Auto-fire, Stun Setting, Notes: 3 Disadvantage may force 'out of ammo')")
+    } else if ($("#secondary-check-DH-17").prop("checked") == true) {
+      $("#inventory-secondary").text("1x DH-17 Blaster Pistol (Ranged(Light), Dam 6, Crit 3, Range: Medium, Encumbrance: 1, Hard Points: 3, Special: Stun Setting)")
+    } else if ($("#secondary-check-DL-44").prop("checked") == true) {
+      $("#inventory-secondary").text("1x DL-44 Heavy Blaster Pistol (Ranged(Light), Dam 7, Crit 3, Range: Medium, Encumbrance: 2, Hard Points: 3, Special: Stun Setting, Notes: 3 Disadvantage may force 'out of ammo')")
+    } else {
+      $("#inventory-secondary").text("No Secondary Selected")
+    }
+
+    /* Grenade */
+    if ($("#grenade-check-fraggrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Frag Grenade (Ranged(Light), Dam 13, Crit 3, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 4, Limited Ammo 1, Pierce 3, Notes: Impact/timer(<= 3 rounds)/dead man detonation)")
+    } else if ($("#grenade-check-armorpiercinggrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Armor Piercing Grenade (Ranged(Light), Dam 12, Crit 3, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 10, Limited Ammo 1, Notes: Impact/timer (<=3 rounds)/dead man detonationD)")
+    } else if ($("#grenade-check-plasmagrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Plasma Grenade (Ranged(Light), Dam 12, Crit 3, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 10, Limited Ammo 1, Notes: Impact/timer(<=3 rounds)/dead man detonation)")
+    } else if ($("#grenade-check-stungrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Stun Grenade (Ranged(Light), Dam 8, Crit N/A, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Disorient 3, Stun Damage, Blast 8, Limited Ammo 1, Notes: Impact/timer(<=3 rounds)/dead man detonation)")
+    } else if ($("#grenade-check-smokegrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Smoke Grenade (Ranged(Light), Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 2, Limited Ammo 1, Notes: Smoke lasts for 4 rounds in mostly still air. Average Resilience check if starting round in smoke: 3 Strain if failed.)")
+    } else if ($("#grenade-check-knockoutgrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Knockout Grenade (Ranged(Light), Dam 12, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 10, Stun Damage, Limited Ammo 1, Notes: No effect on targets wearing breath masks or without respiratory systems.)")
+    } else if ($("#grenade-check-mercygrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Mercy Grenade (Ranged(Light), Dam 5, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 5, Stun Damage, Limited Ammo 1, Notes: Impact/timer(<=3 rounds)/dead man detonation. Anyone hit makes a Hard Resilience check to have bad memory of the encounter + Disoriented for 1 round per disadvantage rolled.)")
+    } else if ($("#grenade-check-infernogrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Inferno Grenade (Ranged(Light), Dam 8, Crit 3, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 5, Burn 2, Limited Ammo 1, Notes: Impact/timer(<=3 rounds)/dead man detonation)")
+    } else if ($("#grenade-check-thermaldet").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Thermal Detonator (Ranged(Light), Dam 20, Crit 2, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 15, Breach 1, Vicious 4, Limited Ammo 1, Notes: Despair results in early detonation. User takes full damage (blast damage if maneuver used to get clear.))")
+    } else if ($("#grenade-check-throwingknives").prop("checked") == true) {
+      $("#inventory-grenade").text("2x Throwing Knives (Ranged(Light), Dam Br + 1, Crit 2, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Pierce 2, Limited Ammo 1, Notes: No penalty for being engaged.)")
+    } else if ($("#grenade-check-noisegrenade").prop("checked") == true) {
+      $("#inventory-grenade").text("1x Noise Grenade (Ranged(Light), Dam 4, Crit 6, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 4, Stun Damage, Concussive 1, Limited Ammo 1)")
+    } else {
+      $("#inventory-grenade").text("No Grenade Selected")
+    }
+
+    /* Melee Weapon */
+    if ($("#melee-check-blastknuckles").prop("checked") == true) {
+      $("#inventory-melee").text("1x Blast Knuckles (Brawl, Dam Br + 4, Crit 4, Range: Engaged, Encumbrance: 2, Hard Points: 0, Special: Inaccurate 1, Note: Each successful hit deals 1 Strain to user)")
+    } else if ($("#melee-check-stunbaton").prop("checked") == true) {
+      $("#inventory-melee").text("1x Stun Baton (Melee, Dam Br + 2, Crit 6, Range: Engaged, Encumbrance: 2, Hard Points: 2, Special: Disorient 2, Stun Damage)")
+    } else if ($("#melee-check-vibroblade").prop("checked") == true) {
+      $("#inventory-melee").text("1x Vibroblade (Melee, Dam Br + 1, Crit 2, Range: Engaged, Encumbrance: 1, Hard Points: 2, Special: Pierce 2, Vicious 1)")
+    } else if ($("#melee-check-punchdagger").prop("checked") == true) {
+      $("#inventory-melee").text("1x Punch Dagger (Melee, Dam Br + 1, Crit 3, Range: Engaged, Encumbrance: 1, Hard Points: 1, Special: Pierce 1, Notes: Add 2 Setback to Perception checks attemtping to find this on a person's body)")
+    } else {
+      $("#inventory-melee").text("No Melee Selected")
+    }
+
+    /* Gadget 1 */
+    if ($("#gadget1-check-atlauncher").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x AT Grenade Launcher (Ranged(Heavy), Dam 15, Crit 3, Range: Long, Encumbrance: 3, Hard Points: 2, Special: Blast 4, Limited Ammo 3, Pierce 4, Slow Firing 1, Notes: Impact detonation)")
+      $("#inventory-gadget1-supplements").text("");
+    } else if ($("#gadget1-check-commandomortar").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Commando Mortar (Gunnery, Dam 10, Crit 2, Range: Long, Encumbrance: 3, Hard Points 3, Special: Blast 8, Pierce 2, Prepare 1)")
+      $("#inventory-gadget1-supplements").text("3x Commando Mortar Shells (Encumbrance 1, Impact detonation)");
+    } else if ($("#gadget1-check-breachingcharge").prop("checked") == true) {
+      $("#inventory-gadget1").text("2x Breaching Charge (Mechanics, Dam 4, Crit 5, Range: Engaged, Encumbrance: 1, Hard Points: 0, Special: Breach 2, Blast 1, Prepare 1, Notes: Difficulty of Mechanics check decided by GM)")
+      $("#inventory-gadget1-supplements").text("");
+    } else if ($("#gadget1-check-atmine").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Anti-Tank Mine (Mechanics, Dam 25, Crit 2, Range: Engaged, Encumbrance: 4, Hard Points: 0, Special: Blast 2, Breach 4, Limited Ammo 1, Notes: Difficulty of check decided by GM. Pressure switch/repulsor field sensor detonation)")
+      $("#inventory-gadget1-supplements").text("");
+    } else if ($("#gadget1-check-emergencymedpac-medisensor").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Emergency Medpac (pg.193, use healing rules on page 232 of AoR Rulebook)");
+      $("#inventory-gadget1-supplements").text("1x Medisensor (Monitors vital signs and other medical data)");
+    } else if ($("#gadget1-check-stimpacks").prop("checked") == true) {
+      $("#inventory-gadget1").text("10x Stimpacks (Heals 5 wounds first use/day, one less each subsequent use.")
+      $("#inventory-gadget1-supplements").text("");
+    } else if ($("#gadget1-check-medpac-medisensor").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Medpac (pg.193, use healing rules on page 232 of AoR Rulebook)");
+      $("#inventory-gadget1-supplements").text("1x Medisensor (Monitors vital signs and other medical data)");
+    } else if ($("#gadget1-check-shapedexplosivecharge").prop("checked") == true) {
+      $("#inventory-gadget1").text("3x Shaped Explosive Charge (Mechanics, Dam 6, Crit 4, Range: Engaged, Encumbrance: 1, Hard Points: 0, Special: Breach 1, Pierce 3, Blast 2, Limited Ammo 1, Notes: Remote/timer(<=5 rounds) detonation. Blast damage only taken if standing whithin Engaged range of charge.)");
+      $("#inventory-gadget1-supplements").text("");
+    } else if ($("#gadget1-check-malaxan").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Malaxan Z50 Grenade Launcher (Gunnery, Dam 8, Crit 4, Range: Medium, Encumbrance: 5, Hard Points: 3, Special: Blast 6, Cumbersome 2, Limited Ammo 6, Notes: Fires 40mm grenades. Takes 1 round to swap grenade type.)");
+      $("#inventory-gadget1-malaxan").text("3x 40mm Grenades (reloads)");
+    } else if ($("#gadget1-check-reconremote-electrobinocs").prop("checked") == true) {
+      $("#inventory-gadget1").text("2x Recon Remote (See Spark of Rebellion wiki for more information.)");
+      $("#inventory-gadget1-supplements").text("1x Electrobinoculars (Removes 1 Setback from Perception checks attemtping to locate an object in low light or bad weather.");
+    } else if ($("#gadget1-check-camopaint-disguisekit").prop("checked") == true) {
+      $("#inventory-gadget1").text("4x Camouflage Paint Tube (See Spark of Rebellion wiki for more information.)");
+      $("#inventory-gadget1-supplements").text("1x Disguise Kit (pg.195 of AoR Rulebook)");
+    } else if ($("#gadget1-check-lockbreaker-slicergear").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Electronic Lock Breaker (pg.195 of AoR Rulebook");
+      $("#inventory-gadget1-supplements").text("1x Slicer Gear (pg.196 of AoR Rulebook)");
+    } else if ($("#gadget1-check-ghilliesuit-camonetting").prop("checked") == true) {
+      $("#inventory-gadget1").text("1x Holographic Ghillie Suit (see Spark of Rebellion wiki for more information.)");
+      $("#inventory-gadget1-supplements").text("1x Roll of Camouflage Netting (see Spark of Rebellion wiki for more information.)");
+    } else {
+      $("#inventory-gadget1").text("No Gadget 1 Selected")
+      $("#inventory-gadget1-supplements").text("");
+    }
+
+    /* Gadget 2 */
+    if ($("#gadget2-check-fraglauncher").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Frag Grenade Launcher (Ranged(Heavy), Dam 8, Crit 4, Range: Medium, Encumbrance: 2, Hard Points: 1, Special: Blast 6, Limited Ammo 2, Notes: Impact +3 sec detonation (same round as firing).)")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-apmine").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Anti-Personnel Mine (Mechanics, Dam 12, Crit 3, Range: Engaged, Encumnbrance: 3, Hard Points: 0, Special: Blast 4, Vicious 4, Limited Ammo 1, Notes: Check difficulty decided by GM, Proximity/laser tripwire detonation.)")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-magcharge").prop("checked") == true) {
+      $("#inventory-gadget2").text("2x Mag Charge (Ranged(Light), Dam 10, Crit 5, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 8, Concussive 2, Disorient 5, Limited Ammo 1, Notes: Timer (<=3 rounds)/comm signal detonation. Disorient affects all characters in short range.)")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-miniflame").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Flame Miniprojector (Ranged(Heavy), Dam 5, Crit 3, Range: Short, Encumbrance: 3, Hard Points: 2, Special: Burn 3, Blast 5, Limited Ammo 1, Notes: Projector is disposable. Fires for 5 sec total (1 round))")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-smokegrenadelauncher").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Smoke Grenade Launcher (Ranged(Heavy), Range: Medium, Encumbrance: 2, Hard Points: 1, Special: Blast 2, Limited Ammo 2, Notes: Impact detonation, smoke lasts 4 rounds in mostly still air. Make an Average Resilience check if starting a round in smoke.)")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-knockoutmine").prop("checked") == true) {
+      $("#inventory-gadget2").text("2x Knockout Mine (Mechanics, Dam 6, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Stun Damage, Limited Ammo 1, Notes: Anyone hit makes Hard Resilience check or becomes Immobilized until end of encounter.)")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-poisongrenades").prop("checked") == true) {
+      $("#inventory-gadget2").text("2x Poison Grenades (Ranged(Light), Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 2, Limited Ammo 1, Notes: No effect on targets wearing breath masks or without respiratory systems. Filled with dioxis on game start.)")
+      $("#inventory-gadget2-supplements").text("");
+    } else if ($("#gadget2-check-entrenchingtool").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Entrenching Tool (Lol shovel. If Improvised weapon: Dam Br + 2, Crit 4)");
+      $("#inventory-gadget2-supplements").text("10x Extra Reloads");
+    } else if ($("#gadget2-check-toolrepairkit").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Repair Tool Kit (Includes precision electronics and droid repair tools, basic tool set, small welder and protective gear, etc.)");
+      $("#inventory-gadget2-supplements").text("10x Extra Reloads");
+    } else if ($("#gadget2-check-demolitionsscanner").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Demolitions Scanner (Adds 1 Boost to checks attempting to locate explosive devices.)");
+      $("#inventory-gadget2-supplements").text("10x Extra Reloads");
+    } else if ($("#gadget2-check-datapurgegrenade").prop("checked") == true) {
+      $("#inventory-gadget2").text("1x Data Purge Grenade (Ranged(Light), Range: Short, Encumbrance: 1, Hard Points: 0, Special: Limited Ammo 1, Notes: Any storage device hit loses its memory. Droids make Hard Resilience check or suffer strain and lose memory.)");
+      $("#inventory-gadget2-supplements").text("1x Ion Grenade (Ranged(Light), Dam 10, Crit 5, Range: Short, Encumbrance: 1, Hard Points: 0, Special: Blast 7, Disorient 5, Stun Damage (Droid Only), Limited Ammo 1, Notes: Impact/timer(<=3 rounds)/dead man detonation.)");
+    } else {
+      $("#inventory-gadget2").text("No Gadget 2 Selected")
+    }
+
+    /* Roles */
+    if ($("#role-check-scout").prop("checked") == true) {
+      window.open('https://swsheets.com/c/spch5yfad-nom-carver---as', '_blank');
+    } else if ($("#role-check-gunner").prop("checked") == true) {
+      window.open('https://swsheets.com/c/wbcowvkrp-ben-astar---ass', '_blank');
+    } else if ($("#role-check-combatmedic").prop("checked") == true) {
+      window.open('https://swsheets.com/c/dgjqud3pw-medic-1', '_blank');
+    } else if ($("#role-check-fieldsurgeon").prop("checked") == true) {
+      window.open('https://swsheets.com/c/thyvcqrnr-medic-2', '_blank');
+    } else if ($("#role-check-heavy").prop("checked") == true) {
+      window.open('https://swsheets.com/c/klr4yafop-rayce-peel---su', '_blank');
+    } else if ($("#role-check-mechanic").prop("checked") == true) {
+      window.open('https://swsheets.com/c/nhrdawqri-danyar-meez---s', '_blank');
+    } else if ($("#role-check-recon").prop("checked") == true) {
+      window.open('https://swsheets.com/c/wsgmaerjx-gorshun-ban---s', '_blank');
+    } else if ($("#role-check-tbd").prop("checked") == true) {
+      window.open('https://swsheets.com/c/cy5zsweim-joyce-keela---s', '_blank');
+    } else {
+      window.alert("No Role Selected");
+    }
+
+
+  });
+});
+        </script>
+    </head>
+    <body id="body">
+        <div class="heading">
+            <img src="https://cf.geekdo-images.com/68mriuq5ro3oNLj7WVWIlQ__medium/img/5-jT-jCknUOkahYqF-PJFrcX0Oo=/fit-in/500x500/filters:no_upscale():strip_icc()/pic2257806.jpg" alt="Age of Rebellion Logo">
+        </div>
+        <h3 class="classes-instructions">CHOOSE A CLASS</h3>
+        <div class="classes">
+            <button class="Assault">Assault</button>
+            <button class="Medic">Medic</button>
+            <button class="Support">Support</button>
+            <button class="Specialist">Specialist</button>
+        </div>
+        <h2 class="selected-class"></h2>
+<!--The following is the Assault customization section-->
+        <div class="assault-customization">
+            <h3 class="primaryweaponinstructions">CHOOSE A PRIMARY WEAPON</h3>
+            <div class="assaultprimaries">
+                <button class="A280">A280 Blaster Rifle</button>
+                <button class="DDC-MR6">DDC-MR6 Modular Rifle</button>
+                <button class="SKZ">SKZ Sporting Blaster</button>
+                <button class="OK-98">OK-98 Blaster Carbine</button>
+            </div>
+            <h4 class="selected-primary"></h4>
+            <div><!--This is the Primary stats section-->
+                <img id="A280stats" src="https://i.imgur.com/1swv47G.jpg" alt="A280 Blaster Rifle Stats">
+                <img id="DDC-MR6stats" src="https://i.imgur.com/s38LSoy.jpg" alt="DDC-MR6 Modular Rifle Stats">
+                <img id="SKZstats" src="https://i.imgur.com/P2qPG46.jpg" alt="SKZ Sporting Blaster Stats">
+                <img id="OK-98stats-assault" src="https://i.imgur.com/ljA48ew.jpg" alt="OK-98 Blaster Carbine Stats">
+            </div>
+            <h3 class="secondaryweaponinstructions">CHOOSE A SECONDARY WEAPON</h3>
+            <div class="secondaries">
+                <button class="HL-27">HL-27 Light Blaster Pistol</button>
+                <button class="SE-14r">SE-14r Light Repeating Pistol</button>
+                <button class="DH-17">DH-17 Blaster Pistol</button>
+                <button class="DL-44">DL-44 Heavy Blaster Pistol</button>
+            </div>
+            <h4 class="selected-secondary"></h4>
+            <div><!--This is the Secondary stats section-->
+                <img id="HL-27stats-assault" src="https://i.imgur.com/aFiccNe.jpg" alt="HL-27 Light Blaster Pistol Stats">
+                <img id="SE-14rstats-assault" src="https://i.imgur.com/lGTGCzY.jpg" alt="SE-14r Light Repeating Blaster Stats">
+                <img id="DH-17stats-assault" src="https://i.imgur.com/Gh4fATy.jpg" alt="DH-17 Blaster Pistol Stats">
+                <img id="DL-44stats-assault" src="https://i.imgur.com/H05FaMi.jpg" alt="DL-44 Heavy Blaster Pistol Stats">
+            </div>
+            <h3 class="grenadeinstructions">CHOOSE A GRENADE</h3>
+            <div class="assaultgrenades">
+                <button class="fraggrenade">Frag Grenade</button>
+                <button class="armorpiercinggrenade">Armor Piercing Grenade</button>
+                <button class="plasmagrenade">Plasma Grenade</button>
+                <button class="stungrenade">Stun Grenade</button>
+            </div>
+            <h4 class="selected-grenade"></h4>
+            <div><!--This is the Grenade stats section-->
+                <img id="fraggrenadestats-assault" src="https://i.imgur.com/IDAK8n3.jpg" alt="Frag Grenade Stats">
+                <img id="armorpiercinggrenadestats" src="https://i.imgur.com/xAkUAqP.jpg" alt="Armor Piercing Grenade Stats">
+                <img id="plasmagrenadestats" src="https://i.imgur.com/NMa2hOj.jpg" alt="Plasma Grenade Stats">
+                <img id="stungrenadestats-assault" src="https://i.imgur.com/gj8X275.jpg" alt="Stun Grenade Stats">
+            </div>
+            <h3 class="meleeinstructions">CHOOSE A MELEE WEAPON</h3>
+            <div class="melees">
+                <button class="blastknuckles">Blast Knuckles</button>
+                <button class="stunbaton">Stun Baton</button>
+                <button class="vibroblade">Vibroblade</button>
+                <button class="punchdagger">Punch Dagger</button>
+            </div>
+            <h4 class="selected-melee"></h4>
+            <div><!--This is the melees stats section-->
+                <img id="blastknucklesstats-assault" src="https://i.imgur.com/LHQBVzX.jpg">
+                <img id="stunbatonstats-assault" src="https://i.imgur.com/XpEJM3B.jpg">
+                <img id="vibrobladestats-assault" src="https://i.imgur.com/zpRk1qw.jpg">
+                <img id="punchdaggerstats-assault" src="https://i.imgur.com/EhS0NEH.jpg">
+            </div>
+            <h3 class="gadget1instructions">CHOOSE GADGET 1</h3>
+            <div class="assaultgadget1">
+                <button class="atlauncher">Armor Piercing Grenade Launcher</button>
+                <button class="commandomortar">Commando Mortar</button>
+               <button class="breachingcharge">Breaching Charge</button>
+                <button class="atmine">Anti Tank Mine</button>
+            </div>
+            <h4 class="selected-gadget1"></h4>
+            <div> <!--This is the Gadget 1 stats section-->
+                <img id="atlauncherstats" src="https://i.imgur.com/TyuFn5n.jpg" alt="AT Grenade Launcher Stats">
+                <img id="commandomortarstats" src="https://i.imgur.com/syDzwg0.jpg" alt="Commando Mortar Stats">
+                <img id="breachingchargestats" src="https://i.imgur.com/RYcHukb.jpg" alt="Breaching Charge Stats">
+                <img id="atminestats" src="https://i.imgur.com/2ouKKjt.jpg" alt="Anti Tank Mine Stats">
+            </div>
+            <h3 class="gadget2instructions">CHOOSE GADGET 2</h3>
+            <div class="assaultgadget2">
+                <button class="fraglauncher">Frag Grenade Launcher</button>
+                <button class="apmine">Anti-Personnel Mine</button>
+                <button class="magcharge">Magnetic Explosive Charges</button>
+                <button class="miniflame">Flame Miniprojector</button>
+            </div>
+			<h4 class="selected-gadget2"></h4>
+            <div><!--This is the gadget 2 stats-->
+                <img id="fraglauncherstats" src="https://i.imgur.com/JiefCia.jpg">
+                <img id="apminestats-assault" src="https://i.imgur.com/pGsU7Lt.jpg">
+                <img id="magchargestats" src="https://i.imgur.com/d64CuoI.jpg">
+                <img id="miniflamestats" src="https://i.imgur.com/2B5yYZ5.jpg">
+            </div>
+            <h3 class="roleinstructions">CHOOSE A COMBAT ROLE</h3>
+            <div class="assaultroles">
+                <button class="role-scout">Scout</button>
+                <button class="role-gunner">Gunner</button>
+            </div>
+            <h4 class="selected-role"></h4>
+			<div class="generation">
+				<button class="generate-character-sheet">Generate Character Sheet</button>
+			</div>
+			<h6 style="color:black; display:flex; justify-content:center">Filler</h6>
+        </div>
+<!--The following is the Medic customization section-->
+        <div class="medic-customization">
+            <h3 class="primaryweaponinstructions">CHOOSE A PRIMARY WEAPON</h3>
+            <div class="medicprimaries">
+                <button class="EE-3">EE-3 Blaster Carbine</button>
+                <button class="ACP">Arakyd ACP Repeater</button>
+                <button class="OK-98">OK-98 Blaster Carbine</button>
+                <button class="Bola">Bola Carbine</button>
+            </div>
+            <h4 class="selected-primary"></h4>
+            <div><!--This is the Primary stats section-->
+                <img id="EE-3stats" src="https://i.imgur.com/SsTujRo.jpg" alt="EE-3 Blaster Carbine Stats">
+                <img id="ACPstats" src="https://i.imgur.com/uvbnePR.jpg" alt="ACP Repeater Stats">
+                <img id="OK-98stats-medic" src="https://i.imgur.com/ljA48ew.jpg" alt="OK-98 Blaster Carbine Stats">
+                <img id="Bolastats" src="https://i.imgur.com/HsdybF1.jpg" alt="Bola Carbine Stats">
+            </div>
+            <h3 class="secondaryweaponinstructions">CHOOSE A SECONDARY WEAPON</h3>
+            <div class="secondaries">
+                <button class="HL-27">HL-27 Light Blaster Pistol</button>
+                <button class="SE-14r">SE-14r Light Repeating Pistol</button>
+                <button class="DH-17">DH-17 Blaster Pistol</button>
+                <button class="DL-44">DL-44 Heavy Blaster Pistol</button>
+            </div>
+            <h4 class="selected-secondary"></h4>
+            <div><!--This is the Secondary stats section-->
+                <img id="HL-27stats-medic" src="https://i.imgur.com/aFiccNe.jpg" alt="HL-27 Light Blaster Pistol Stats">
+                <img id="SE-14rstats-medic" src="https://i.imgur.com/lGTGCzY.jpg" alt="SE-14r Light Repeating Blaster Stats">
+                <img id="DH-17stats-medic" src="https://i.imgur.com/Gh4fATy.jpg" alt="DH-17 Blaster Pistol Stats">
+                <img id="DL-44stats-medic" src="https://i.imgur.com/H05FaMi.jpg" alt="DL-44 Heavy Blaster Pistol Stats">
+            </div>
+            <h3 class="grenadeinstructions">CHOOSE A GRENADE</h3>
+            <div class="medicgrenades">
+                <button class="fraggrenade">Frag Grenade</button>
+                <button class="smokegrenade">Smoke Grenade</button>
+                <button class="knockoutgrenade">Knockout Grenade</button>
+                <button class="stungrenade">Stun Grenade</button>
+            </div>
+            <h4 class="selected-grenade"></h4>
+            <div><!--This is the Grenade stats section-->
+                <img id="fraggrenadestats-medic" src="https://i.imgur.com/IDAK8n3.jpg" alt="Frag Grenade Stats">
+                <img id="smokegrenadestats" src="https://i.imgur.com/H2AHInf.jpg" alt="Smoke Grenade Stats">
+                <img id="knockoutgrenadestats" src="https://i.imgur.com/qtZN3P8.jpg" alt="Knockout Grenade Stats">
+                <img id="stungrenadestats-medic" src="https://i.imgur.com/gj8X275.jpg" alt="Stun Grenade Stats">
+            </div>
+            <h3 class="meleeinstructions">CHOOSE A MELEE WEAPON</h3>
+            <div class="melees">
+                <button class="blastknuckles">Blast Knuckles</button>
+                <button class="stunbaton">Stun Baton</button>
+                <button class="vibroblade">Vibroblade</button>
+                <button class="punchdagger">Punch Dagger</button>
+            </div>
+            <h4 class="selected-melee"></h4>
+            <div><!--This is the melees stats section-->
+                <img id="blastknucklesstats-medic" src="https://i.imgur.com/LHQBVzX.jpg">
+                <img id="stunbatonstats-medic" src="https://i.imgur.com/XpEJM3B.jpg">
+                <img id="vibrobladestats-medic" src="https://i.imgur.com/zpRk1qw.jpg">
+                <img id="punchdaggerstats-medic" src="https://i.imgur.com/EhS0NEH.jpg">
+            </div>
+            <h3 class="gadget1instructions">CHOOSE GADGET 1</h3>
+            <div class="medicgadget1">
+                <button class="emergencymedpac-medisensor">Emergency Medpac and Medisensor</button>
+                <button class="stimpacks">Stimpacks</button>
+               <button class="medpac-medisensor">Medpac and Medisensor</button>
+            </div>
+            <h4 class="selected-gadget1"></h4>
+            <div> <!--This is the Gadget 1 stats section-->
+                <img id="emergencymedpac-medisensor-stats" src="https://i.imgur.com/NbfOn10.jpg" alt="Emergency Medpac + Medisensor Stats">
+                <img id="stimpacksstats" src="https://i.imgur.com/4NvZ8MH.jpg" alt="Stimpacks Stats">
+                <img id="medpac-medisensor-stats" src="https://i.imgur.com/WtiRC0q.jpg" alt="Medpac + Medisensor Stats">
+            </div>
+            <h3 class="gadget2instructions">CHOOSE GADGET 2</h3>
+            <div class="medicgadget2">
+                <button class="smokegrenadelauncher">Smoke Grenade Launcher</button>
+                <button class="apmine">Anti-Personnel Mine</button>
+                <button class="knockoutmine">Knockout Mine</button>
+                <button class="poisongrenades">Poison Gas Grenades</button>
+            </div>
+			<h4 class="selected-gadget2"></h4>
+            <div><!--This is the gadget 2 stats-->
+                <img id="smokegrenadelauncherstats" src="https://i.imgur.com/OjoO1Hr.jpg" alt="Smoke Grenade Launcher Stats">
+                <img id="apminestats-medic" src="https://i.imgur.com/pGsU7Lt.jpg" alt="AP Mine Stats">
+                <img id="knockoutminestats" src="https://i.imgur.com/mmFcoAj.jpg" alt="Knockout Mine Stats">
+                <img id="poisongrenadesstats" src="https://i.imgur.com/oKQ8t3x.jpg" alt="Poison Gas Grenade Stats">
+            </div>
+            <h3 class="roleinstructions">CHOOSE A COMBAT ROLE</h3>
+            <div class="medicroles">
+                <button class="role-combatmedic">Combat Medic</button>
+                <button class="role-fieldsurgeon">Field Surgeon</button>
+            </div>
+            <h4 class="selected-role"></h4>
+			<div class="generation">
+				<button class="generate-character-sheet">Generate Character Sheet</button>
+			</div>
+			<h6 style="color:black; display:flex; justify-content:center">Filler</h6>
+        </div>
+        <div class="support-customization">
+            <h3 class="primaryweaponinstructions">CHOOSE A PRIMARY WEAPON</h3>
+            <div class="supportprimaries">
+                <button class="DLT19">DLT-19 Heavy Blaster Rifle</button>
+                <button class="DHX">BlasTech DH-X Heavy Blaster Rifle</button>
+                <button class="lightrepeating">T-21 Light Repeating Blaster Rifle</button>
+                <button class="scattergun">Adostic Arms 8-Gauge Scatter Gun</button>
+            </div>
+            <h4 class="selected-primary"></h4>
+            <div><!--This is the Primary stats section-->
+                <img id="DLT19stats" src="https://i.imgur.com/8CSeNTm.jpg" alt="DLT-19 Stats">
+                <img id="DHXstats" src="https://i.imgur.com/eGMSxc8.jpg" alt="DH-X Stats">
+                <img id="lightrepeatingstats" src="https://i.imgur.com/BVeHyIw.jpg" alt="T-21 Stats">
+                <img id="scattergunstats" src="https://i.imgur.com/YmygG8M.jpg" alt="Scatter Gun Stats">
+            </div>
+            <h3 class="secondaryweaponinstructions">CHOOSE A SECONDARY WEAPON</h3>
+            <div class="secondaries">
+                <button class="HL-27">HL-27 Light Blaster Pistol</button>
+                <button class="SE-14r">SE-14r Light Repeating Pistol</button>
+                <button class="DH-17">DH-17 Blaster Pistol</button>
+                <button class="DL-44">DL-44 Heavy Blaster Pistol</button>
+            </div>
+            <h4 class="selected-secondary"></h4>
+            <div><!--This is the Secondary stats section-->
+                <img id="HL-27stats-support" src="https://i.imgur.com/aFiccNe.jpg" alt="HL-27 Light Blaster Pistol Stats">
+                <img id="SE-14rstats-support" src="https://i.imgur.com/lGTGCzY.jpg" alt="SE-14r Light Repeating Blaster Stats">
+                <img id="DH-17stats-support" src="https://i.imgur.com/Gh4fATy.jpg" alt="DH-17 Blaster Pistol Stats">
+                <img id="DL-44stats-support" src="https://i.imgur.com/H05FaMi.jpg" alt="DL-44 Heavy Blaster Pistol Stats">
+            </div>
+            <h3 class="grenadeinstructions">CHOOSE A GRENADE</h3>
+            <div class="supportgrenades">
+                <button class="fraggrenade">Frag Grenade</button>
+                <button class="infernogrenade">Inferno Grenade</button>
+                <button class="mercygrenade">Mercy Grenade</button>
+                <button class="thermaldet">Thermal Detonator</button>
+            </div>
+            <h4 class="selected-grenade"></h4>
+            <div><!--This is the Grenade stats section-->
+                <img id="fraggrenadestats-support" src="https://i.imgur.com/IDAK8n3.jpg" alt="Frag Grenade Stats">
+                <img id="infernogrenadestats" src="https://i.imgur.com/E7YjaR3.jpg" alt="Inferno Grenade Stats">
+                <img id="mercygrenadestats" src="https://i.imgur.com/1tpMDXH.jpg" alt="Knockout Grenade Stats">
+                <img id="thermaldetstats" src="https://i.imgur.com/aqDN2KM.jpg" alt="Thermal Detonator Stats">
+            </div>
+            <h3 class="meleeinstructions">CHOOSE A MELEE WEAPON</h3>
+            <div class="melees">
+                <button class="blastknuckles">Blast Knuckles</button>
+                <button class="stunbaton">Stun Baton</button>
+                <button class="vibroblade">Vibroblade</button>
+                <button class="punchdagger">Punch Dagger</button>
+            </div>
+            <h4 class="selected-melee"></h4>
+            <div><!--This is the melees stats section-->
+                <img id="blastknucklesstats-support" src="https://i.imgur.com/LHQBVzX.jpg">
+                <img id="stunbatonstats-support" src="https://i.imgur.com/XpEJM3B.jpg">
+                <img id="vibrobladestats-support" src="https://i.imgur.com/zpRk1qw.jpg">
+                <img id="punchdaggerstats-support" src="https://i.imgur.com/EhS0NEH.jpg">
+            </div>
+            <h3 class="gadget1instructions">CHOOSE GADGET 1</h3>
+            <div class="supportgadget1">
+                <button class="shapedexplosivecharge">Shaped Explosive Charges</button>
+                <button class="atmine">Anti-Tank Mine</button>
+                <button class="atlauncher">Anti-Tank Grenade Launcher</button>
+                <button class="malaxan">Malaxan Z50 Grenade Launcher</button>
+            </div>
+            <h4 class="selected-gadget1"></h4>
+            <div> <!--This is the Gadget 1 stats section-->
+                <img id="shapedexplosivechargestats" src="https://i.imgur.com/GWsbY3w.jpg" alt="Shaped Explosive Charge Stats">
+                <img id="atminestats-support" src="https://i.imgur.com/2ouKKjt.jpg" alt="AT Mine Stats">
+                <img id="atlauncherstats-support" src="https://i.imgur.com/TyuFn5n.jpg" alt="AT Launcher Stats">
+                <img id="malaxanstats" src="https://i.imgur.com/1yEnaSw.jpg" alt="Malaxan Stats">
+            </div>
+            <h3 class="gadget2instructions">CHOOSE GADGET 2</h3>
+            <div class="supportgadget2">
+                <button class="entrenchingtool">Entrenching Tool and Extra Reloads</button>
+                <button class="toolrepairkit">Repair Tool Kit and Extra Reloads</button>
+                <button class="demolitionsscanner">Demolitions Scanner and Extra Reloads</button>
+            </div>
+			<h4 class="selected-gadget2"></h4>
+            <div><!--This is the gadget 2 stats-->
+                <img id="entrenchingtoolstats" src="https://i.imgur.com/F1rTers.jpg" alt="Entrenching Tool Stats">
+                <img id="toolrepairkitstats" src="https://i.imgur.com/WcJjTpf.jpg" alt="Repair Tool Kit Stats">
+                <img id="demolitionsscannerstats" src="https://i.imgur.com/FsUOsdI.jpg" alt="Demo Scanner Stats">
+            </div>
+            <h3 class="roleinstructions">CHOOSE A COMBAT ROLE</h3>
+            <div class="supportroles">
+                <button class="role-heavy">Heavy</button>
+                <button class="role-mechanic">Saboteur</button>
+            </div>
+            <h4 class="selected-role"></h4>
+			<div class="generation">
+				<button class="generate-character-sheet">Generate Character Sheet</button>
+			</div>
+			<h6 style="color:black; display:flex; justify-content:center">Filler</h6>
+        </div>
+        <div class="specialist-customization">
+            <h3 class="primaryweaponinstructions">CHOOSE A PRIMARY WEAPON</h3>
+            <div class="specialistprimaries">
+                <button class="E11">E-11 Sniper Rifle</button>
+                <button class="HBT4">Hbt-4 Hunting Blaster</button>
+                <button class="sandpanther">MkV Sand Panther Hunting Rifle</button>
+                <button class="czerka">Czerka Model 39 Sharpshooter</button>
+            </div>
+            <h4 class="selected-primary"></h4>
+            <div><!--This is the Primary stats section-->
+                <img id="E11stats" src="https://i.imgur.com/YOfWpRv.jpeg" alt="E-11 Stats">
+                <img id="HBT4stats" src="https://i.imgur.com/TKbvnkC.jpeg" alt="Hbt-4 Stats">
+                <img id="sandpantherstats" src="https://i.imgur.com/a4UBNXE.jpeg" alt="Sand Panther Stats">
+                <img id="czerkastats" src="https://i.imgur.com/50hCmcO.jpeg" alt="Czerka Stats">
+            </div>
+            <h3 class="secondaryweaponinstructions">CHOOSE A SECONDARY WEAPON</h3>
+            <div class="secondaries">
+                <button class="HL-27">HL-27 Light Blaster Pistol</button>
+                <button class="SE-14r">SE-14r Light Repeating Pistol</button>
+                <button class="DH-17">DH-17 Blaster Pistol</button>
+                <button class="DL-44">DL-44 Heavy Blaster Pistol</button>
+            </div>
+            <h4 class="selected-secondary"></h4>
+            <div><!--This is the Secondary stats section-->
+                <img id="HL-27stats-specialist" src="https://i.imgur.com/aFiccNe.jpg" alt="HL-27 Light Blaster Pistol Stats">
+                <img id="SE-14rstats-specialist" src="https://i.imgur.com/lGTGCzY.jpg" alt="SE-14r Light Repeating Blaster Stats">
+                <img id="DH-17stats-specialist" src="https://i.imgur.com/Gh4fATy.jpg" alt="DH-17 Blaster Pistol Stats">
+                <img id="DL-44stats-specialist" src="https://i.imgur.com/H05FaMi.jpg" alt="DL-44 Heavy Blaster Pistol Stats">
+            </div>
+            <h3 class="grenadeinstructions">CHOOSE A GRENADE</h3>
+            <div class="specialistgrenades">
+                <button class="fraggrenade">Frag Grenade</button>
+                <button class="throwingknives">Throwing Knives</button>
+                <button class="plasmagrenade">Plasma Grenade</button>
+                <button class="noisegrenade">Noise Grenade</button>
+            </div>
+            <h4 class="selected-grenade"></h4>
+            <div><!--This is the Grenade stats section-->
+                <img id="fraggrenadestats-specialist" src="https://i.imgur.com/IDAK8n3.jpg" alt="Frag Grenade Stats">
+                <img id="throwingknivesstats" src="https://i.imgur.com/qzHcbYU.jpeg" alt="Throwing Knives Stats">
+                <img id="plasmagrenadestats-specialist" src="https://i.imgur.com/NMa2hOj.jpg" alt="Plasma Grenade Stats">
+                <img id="noisegrenadestats" src="https://i.imgur.com/RC2HCqV.jpeg" alt="Noise Grenade Stats">
+            </div>
+            <h3 class="meleeinstructions">CHOOSE A MELEE WEAPON</h3>
+            <div class="melees">
+                <button class="blastknuckles">Blast Knuckles</button>
+                <button class="stunbaton">Stun Baton</button>
+                <button class="vibroblade">Vibroblade</button>
+                <button class="punchdagger">Punch Dagger</button>
+            </div>
+            <h4 class="selected-melee"></h4>
+            <div><!--This is the melees stats section-->
+                <img id="blastknucklesstats-specialist" src="https://i.imgur.com/LHQBVzX.jpg">
+                <img id="stunbatonstats-specialist" src="https://i.imgur.com/XpEJM3B.jpg">
+                <img id="vibrobladestats-specialist" src="https://i.imgur.com/zpRk1qw.jpg">
+                <img id="punchdaggerstats-specialist" src="https://i.imgur.com/EhS0NEH.jpg">
+            </div>
+            <h3 class="gadget1instructions">CHOOSE GADGET 1</h3>
+            <div class="specialistgadget1">
+                <button class="reconremote-electrobinocs">Recon Remote + Electrobinoculars</button>
+                <button class="camopaint-disguisekit">Camouflage Paint + Disguise Kit</button>
+                <button class="lockbreaker-slicergear">Electronic Lock Breaker + Slicer Gear</button>
+                <button class="ghilliesuit-camonetting">Holographic Ghillie Suit + Camouflage Netting</button>
+            </div>
+            <h4 class="selected-gadget1"></h4>
+            <div> <!--This is the Gadget 1 stats section-->
+                <img id="reconremote-electrobinocs-stats" src="https://i.imgur.com/zIFwz6G.jpeg" alt="Recon Kit Stats">
+                <img id="camopaint-disguisekit-stats" src="https://i.imgur.com/Kid4rOL.jpeg" alt="Camo Kit Stats">
+                <img id="lockbreaker-slicergear-stats" src="https://i.imgur.com/KEKmSKc.jpeg" alt="Infiltration Kit Stats">
+                <img id="ghilliesuit-camonetting-stats" src="https://i.imgur.com/shuvpg3.jpeg" alt="Sniper Kit Stats">
+            </div>
+            <h3 class="gadget2instructions">CHOOSE GADGET 2</h3>
+            <div class="specialistgadget2">
+                <button class="apmine">Anti-Personnel Mine</button>
+                <button class="magcharge">Magnetic Explosive Charges</button>
+                <button class="datapurgegrenade">Data-Purge Grenade + Ion Grenade</button>
+                <button class="fraglauncher">Frag Grenade Launcher</button>
+            </div>
+			<h4 class="selected-gadget2"></h4>
+            <div><!--This is the gadget 2 stats-->
+                <img id="apminestats-specialist" src="https://i.imgur.com/pGsU7Lt.jpg" alt="AP Mine Stats">
+                <img id="magchargestats-specialist" src="https://i.imgur.com/d64CuoI.jpg" alt="Mag Charge Stats">
+                <img id="datapurgegrenadestats" src="https://i.imgur.com/SI3oJQF.jpeg" alt="Data Purge Stats">
+                <img id="fraglauncherstats-specialist" src="https://i.imgur.com/JiefCia.jpg" alt="Frag Launcher Stats">
+            </div>
+            <h3 class="roleinstructions">CHOOSE A COMBAT ROLE</h3>
+            <div class="specialistroles">
+                <button class="role-recon">Recon</button>
+                <button class="role-tbd">Sniper</button>
+            </div>
+            <h4 class="selected-role"></h4>
+			<div class="generation">
+				<button class="generate-character-sheet">Generate Character Sheet</button>
+			</div>
+			<h6 style="color:black; display:flex; justify-content:center">Filler</h6>
+        </div>
+
+        <div style="display:none; color:white"><!-- Customization readout section-->
+            <!--Class Check-->
+            <input type="radio" id="class-check-assault" name="class-check">
+            <label for="class-check-assault">Class Check = Assault</label>
+            <input type="radio" id="class-check-medic" name="class-check">
+            <label for="class-check-medic">Class Check = Medic</label>
+            <input type="radio" id="class-check-support" name="class-check">
+            <label for="class-check-support">Class Check = Support</label>
+            <input type="radio" id="class-check-specialist" name="class-check">
+            <label for="class-check-specialist">Class Check = Specialist</label>
+            <br>
+            <!--Primary Check-->
+            <input type="radio" id="primary-check-A280" name="primary-check">
+            <label for="primary-check-A280">Primary Check = A280</label>
+            <input type="radio" id="primary-check-DDC-MR6" name="primary-check">
+            <label for="primary-check-DDC-MR6">Primary Check = DDC-MR6</label>
+            <input type="radio" id="primary-check-SKZ" name="primary-check">
+            <label for="primary-check-SKZ">Primary Check = SKZ</label>
+            <input type="radio" id="primary-check-OK-98" name="primary-check">
+            <label for="primary-check-OK-98">Primary Check = OK-98</label>
+            <input type="radio" id="primary-check-EE-3" name="primary-check">
+            <label for="primary-check-EE-3">Primary Check = EE-3</label>
+            <input type="radio" id="primary-check-ACP" name="primary-check">
+            <label for="primary-check-ACP">Primary Check = ACP</label>
+            <input type="radio" id="primary-check-Bola" name="primary-check">
+            <label for="primary-check-Bola">Primary Check = Bola</label>
+            <input type="radio" id="primary-check-DLT19" name="primary-check">
+            <label for="primary-check-DLT19">Primary Check = DLT-19</label>
+            <input type="radio" id="primary-check-DHX" name="primary-check">
+            <label for="primary-check-DHX">Primary Check = DH-X</label>
+            <input type="radio" id="primary-check-lightrepeating" name="primary-check">
+            <label for="primary-check-lightrepeating">Primary Check = T-21</label>
+            <input type="radio" id="primary-check-scattergun" name="primary-check">
+            <label for="primary-check-scattergun">Primary Check = Scatter Gun</label>
+            <input type="radio" id="primary-check-E11" name="primary-check">
+            <label for="primary-check-E11">Primary Check = E-11</label>
+            <input type="radio" id="primary-check-HBT4" name="primary-check">
+            <label for="primary-check-HBT4">Primary Check = Hbt-4</label>
+            <input type="radio" id="primary-check-sandpanther" name="primary-check">
+            <label for="primary-check-sandpanther">Primary Check = Sand Panther</label>
+            <input type="radio" id="primary-check-czerka" name="primary-check">
+            <label for="primary-check-czerka">Primary Check = Czerka</label>
+            <br>
+            <!--Secondary Check-->
+            <input type="radio" id="secondary-check-HL-27" name="secondary-check">
+            <label for="secondary-check-HL-27">Secondary Check = HL-27</label>
+            <input type="radio" id="secondary-check-SE-14r" name="secondary-check">
+            <label for="secondary-check-SE-14r">Secondary Check = SE-14r</label>
+            <input type="radio" id="secondary-check-DH-17" name="secondary-check">
+            <label for="secondary-check-DH-17">Secondary Check = DH-17</label>
+            <input type="radio" id="secondary-check-DL-44" name="secondary-check">
+            <label for="secondary-check-DL-44">Secondary Check = DL-44</label>
+            <br>
+            <!--Grenade Check-->
+            <input type="radio" id="grenade-check-fraggrenade" name="grenade-check">
+            <label for="grenade-check-fraggrenade">Grenade Check = Frag</label>
+            <input type="radio" id="grenade-check-armorpiercinggrenade" name="grenade-check">
+            <label for="grenade-check-armorpiercinggrenade">Grenade Check = AT</label>
+            <input type="radio" id="grenade-check-plasmagrenade" name="grenade-check">
+            <label for="grenade-check-plasmagrenade">Grenade Check = Plasma</label>
+            <input type="radio" id="grenade-check-stungrenade" name="grenade-check">
+            <label for="grenade-check-stungrenade">Grenade Check = Stun</label>
+            <input type="radio" id="grenade-check-smokegrenade" name="grenade-check">
+            <label for="grenade-check-smokegrenade">Grenade Check = Smoke</label>
+            <input type="radio" id="grenade-check-knockoutgrenade" name="grenade-check">
+            <label for="grenade-check-knockoutgrenade">Grenade Check = Knockout</label>
+            <input type="radio" id="grenade-check-mercygrenade" name="grenade-check">
+            <label for="grenade-check-mercygrenade">Grenade Check = Mercy</label>
+            <input type="radio" id="grenade-check-infernogrenade" name="grenade-check">
+            <label for="grenade-check-infernogrenade">Grenade Check = Inferno</label>
+            <input type="radio" id="grenade-check-thermaldet" name="grenade-check">
+            <label for="grenade-check-thermaldet">Grenade Check = Thermal Detonator</label>
+            <input type="radio" id="grenade-check-throwingknives" name="grenade-check">
+            <label for="grenade-check-throwingknives">Grenade Check = Throwing Knives</label>
+            <input type="radio" id="grenade-check-noisegrenade" name="grenade-check">
+            <label for="grenade-check-noisegrenade">Grenade Check = Noise Grenade</label>
+            <br>
+            <!--Melee Check-->
+            <input type="radio" id="melee-check-blastknuckles" name="melee-check">
+            <label for="melee-check-blastknuckles">Melee Check = Blast Knuckles</label>
+            <input type="radio" id="melee-check-stunbaton" name="melee-check">
+            <label for="melee-check-stunbaton">Melee Check = Stun Baton</label>
+            <input type="radio" id="melee-check-vibroblade" name="melee-check">
+            <label for="melee-check-vibroblade">Melee Check = Vibroblade</label>
+            <input type="radio" id="melee-check-punchdagger" name="melee-check">
+            <label for="melee-check-punchdagger">Melee Check = Punch Dagger</label>
+            <br>
+            <!--Gadget 1 Check-->
+            <input type="radio" id="gadget1-check-atlauncher" name="gadget1-check">
+            <label for="gadget1-check-atlauncher">Gadget 1 Check = AT Launcher</label>
+            <input type="radio" id="gadget1-check-commandomortar" name="gadget1-check">
+            <label for="gadget1-check-commandomortar">Gadget 1 Check = Commando Mortar</label>
+            <input type="radio" id="gadget1-check-breachingcharge" name="gadget1-check">
+            <label for="gadget1-check-breachingcharge">Gadget 1 Check = Breaching Charge</label>
+            <input type="radio" id="gadget1-check-atmine" name="gadget1-check">
+            <label for="gadget1-check-atmine">Gadget 1 Check = AT Mine</label>
+            <input type="radio" id="gadget1-check-emergencymedpac-medisensor" name="gadget1-check">
+            <label for="gadget1-check-emergencymedpac-medisensor">Gadget 1 Check = E. Medpac + Medisensor</label>
+            <input type="radio" id="gadget1-check-stimpacks" name="gadget1-check">
+            <label for="gadget1-check-stimpacks">Gadget 1 Check = Stimpacks</label>
+            <input type="radio" id="gadget1-check-medpac-medisensor" name="gadget1-check">
+            <label for="gadget1-check-medpac-medisensor">Gadget 1 Check = Medpac + Medisensor</label>
+            <input type="radio" id="gadget1-check-shapedexplosivecharge" name="gadget1-check">
+            <label for="gadget1-check-shapedexplosivecharge">Gadget 1 Check = Shaped Explosives</label>
+            <input type="radio" id="gadget1-check-malaxan" name="gadget1-check">
+            <label for="gadget1-check-malaxan">Gadget 1 Check = Malaxan</label>
+            <input type="radio" id="gadget1-check-reconremote-electrobinocs" name="gadget1-check">
+            <label for="gadget1-check-reconremote-electrobinocs">Gadget 1 Check = Recon Kit</label>
+            <input type="radio" id="gadget1-check-camopaint-disguisekit" name="gadget1-check">
+            <label for="gadget1-check-camopaint-disguisekit">Gadget 1 Check = Camo Kit</label>
+            <input type="radio" id="gadget1-check-lockbreaker-slicergear" name="gadget1-check">
+            <label for="gadget1-check-lockbreaker-slicergear">Gadget 1 Check = Infiltration Kit</label>
+            <input type="radio" id="gadget1-check-ghilliesuit-camonetting" name="gadget1-check">
+            <label for="gadget1-check-ghilliesuit-camonetting">Gadget 1 Check = Sniper Kit</label>
+            <br>
+            <!--Gadget 2 Check-->
+            <input type="radio" id="gadget2-check-fraglauncher" name="gadget2-check">
+            <label for="gadget2-check-fraglauncher">Gadget 2 Check = Frag Launcher</label>
+            <input type="radio" id="gadget2-check-apmine" name="gadget2-check">
+            <label for="gadget2-check-apmine">Gadget 2 Check = AP Mine</label>
+            <input type="radio" id="gadget2-check-magcharge" name="gadget2-check">
+            <label for="gadget2-check-magcharge">Gadget 2 Check = Mag Charge</label>
+            <input type="radio" id="gadget2-check-miniflame" name="gadget2-check">
+            <label for="gadget2-check-miniflame">Gadget 2 Check = Mini Flame</label>
+            <input type="radio" id="gadget2-check-smokegrenadelauncher" name="gadget2-check">
+            <label for="gadget2-check-smokegrenadelauncher">Gadget 2 Check = Smoke Launcher</label>
+            <input type="radio" id="gadget2-check-knockoutmine" name="gadget2-check">
+            <label for="gadget2-check-knockoutmine">Gadget 2 Check = Knockout Mine</label>
+            <input type="radio" id="gadget2-check-poisongrenades" name="gadget2-check">
+            <label for="gadget2-check-poisongrenades">Gadget 2 Check = Poison Grenades</label>
+            <input type="radio" id="gadget2-check-entrenchingtool" name="gadget2-check">
+            <label for="gadget2-check-entrenchingtool">Gadget 2 Check = Entrenching Tool</label>
+            <input type="radio" id="gadget2-check-toolrepairkit" name="gadget2-check">
+            <label for="gadget2-check-toolrepairkit">Gadget 2 Check = Repair Tool Kit</label>
+            <input type="radio" id="gadget2-check-demolitionsscanner" name="gadget2-check">
+            <label for="gadget2-check-demolitionsscanner">Gadget 2 Check = Demolitions Scanner</label>
+            <input type="radio" id="gadget2-check-datapurgegrenade" name="gadget2-check">
+            <label for="gadget2-check-datapurgegrenade">Gadget 2 Check = Data Purge Grenade</label>
+            <br>
+            <!--Role Check-->
+            <input type="radio" id="role-check-scout" name="role check">
+            <label for="role-check-scout">Role Check = Scout</label>
+            <input type="radio" id="role-check-gunner" name="role check">
+            <label for="role-check-gunner">Role Check = Gunner</label>
+            <input type="radio" id="role-check-combatmedic" name="role check">
+            <label for="role-check-combatmedic">Role Check = Combat Medic</label>
+            <input type="radio" id="role-check-fieldsurgeon" name="role check">
+            <label for="role-check-fieldsurgeon">Role Check = Field Surgeon</label>
+            <input type="radio" id="role-check-heavy" name="role check">
+            <label for="role-check-heavy">Role Check = Heavy</label>
+            <input type="radio" id="role-check-mechanic" name="role check">
+            <label for="role-check-mechanic">Role Check = Mechanic</label>
+            <input type="radio" id="role-check-recon" name="role check">
+            <label for="role-check-recon">Role Check = Recon</label>
+            <input type="radio" id="role-check-tbd" name="role check">
+            <label for="role-check-tbd">Role Check = TBD</label>
+        </div>
+        <br>
+        <div style="color:rgb(167, 123, 123); width:60vw; position:absolute; left:20vw; z-index:0"><!--This is the inventory section-->
+            <h1 id="inventory" style="display:flex; justify-content: center; margin-top:5vh;"></h1>
+            <h4 id="inventory-primary" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+
+            <h4 id="inventory-secondary" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+
+            <h4 id="inventory-grenade" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+
+            <h4 id="inventory-melee" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+
+            <h4 id="inventory-gadget1" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="inventory-gadget1-supplements" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="inventory-gadget2" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="inventory-gadget2-supplements" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+
+            <h4 id="misc1" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc2" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc3" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc4" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc5" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc6" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc7" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc8" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+            <h4 id="misc9" style="display:flex; justify-content: center; margin-top:5vh; text-align:center"></h4>
+
+        </div>
+    </body>
+	</html>
